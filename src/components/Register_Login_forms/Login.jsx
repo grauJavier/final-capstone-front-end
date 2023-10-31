@@ -1,27 +1,20 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import sendRegistration from '../../redux/actions/sendRegistration';
+import sendLogin from '../../redux/actions/sendLogin';
 
-const Register = () => {
+const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.user.errorRegister);
-  const notice = useSelector((state) => state.user.noticeRegister);
+  const error = useSelector((state) => state.user.errorLogin);
+  const notice = useSelector((state) => state.user.noticeLogin);
 
   const onSubmit = (data) => {
-    dispatch(sendRegistration(data));
+    dispatch(sendLogin(data));
   };
 
   return (
     <div>
       <form className="bg-zinc-700 flex flex-col items-center justify-center gap-5 min-h-screen" onSubmit={handleSubmit(onSubmit)}>
-        <input 
-          {...register("user.username", {
-            required: { value: true, message: 'Username is required' }
-          })}
-          placeholder='Username'
-          />
-          <p>{errors.user?.username?.message}</p>
           <input
             {...register("user.email", { 
               required: { value: true, message: 'Email is required'}, 
@@ -50,4 +43,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
