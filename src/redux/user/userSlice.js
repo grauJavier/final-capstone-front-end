@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import sendRegistration from '../actions/sendRegistration';
 import sendLogin from '../actions/sendLogin';
+import sendLogout from '../actions/sendLogout';
 
 const userSlice = createSlice({
   name: 'user',
@@ -34,7 +35,17 @@ const userSlice = createSlice({
       .addCase(sendLogin.rejected, (state, action) => {
         state.errorLogin = action.payload;
         state.noticeLogin = null;
-      });
+      })
+      .addCase(sendLogout.fulfilled, (state, action) => {
+        state.currentUser = null;
+        state.token = null;
+        state.noticeLogin = action.payload.message;
+        state.errorLogin = null;
+      })
+      .addCase(sendLogout.rejected, (state, action) => {
+        state.noticeLogin = null;
+        state.errorLogin = action.payload.message;
+      })
   },
 });
 
