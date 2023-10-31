@@ -10,7 +10,8 @@ const userSlice = createSlice({
     noticeRegister: null,
     currentUser: null,
     errorLogin: null,
-    noticeLogin: null
+    noticeLogin: null,
+    token: null
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -22,15 +23,17 @@ const userSlice = createSlice({
       })
       .addCase(sendRegistration.rejected, (state, action) => {
         state.errorRegister = action.payload.status.message;
+        state.noticeRegister = null;
       })
       .addCase(sendLogin.fulfilled, (state, action) => {
-        state.currentUser = action.payload.data.user;
+        state.currentUser = action.payload.body.status.data.user;
         state.errorLogin = null;
-        state.noticeLogin = action.payload.status.message;
-        console.log(state.currentUser);
+        state.noticeLogin = action.payload.body.status.message;
+        state.token = action.payload.authorization;
       })
       .addCase(sendLogin.rejected, (state, action) => {
-        state.errorLogin = action.payload.status.message;
+        state.errorLogin = action.payload;
+        state.noticeLogin = null;
       });
   },
 });
