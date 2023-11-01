@@ -5,6 +5,8 @@ import NotFound from './components/NotFound'
 import Register from './components/Register_Login_forms/Register'
 import Login from './components/Register_Login_forms/Login'
 import NoticeAlert from './components/NoticeAlert'
+import ProtectedRoute from './components/utils/ProtectedRoute'
+import PublicRoute from './components/utils/PublicRoutes'
 import './App.css'
 
 function App() {
@@ -15,9 +17,15 @@ function App() {
     <BrowserRouter>
       <NoticeAlert />
       <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={ user ? <Home /> : <Login />} />
+        <Route element={<ProtectedRoute user={user} />}>
+          <Route index path="/" element={<Home />} />
+        </Route>
+        <Route element={<PublicRoute user={user} />}>
+          <Route path="/register" element={<Register />} />
+        </Route>
+        <Route element={<PublicRoute user={user} />}>
+          <Route path="/login" element={<Login />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
