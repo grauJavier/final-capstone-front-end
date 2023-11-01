@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const API = 'http://127.0.0.1:3000/login';
 
-const sendLogin = createAsyncThunk('user/sendLogin', async (data) => {
+const sendLogin = createAsyncThunk('user/sendLogin', async (data, { rejectWithValue }) => {
   try {
     const response = await axios.post(API, data);
 
@@ -15,7 +15,7 @@ const sendLogin = createAsyncThunk('user/sendLogin', async (data) => {
 
     return responseDataWithHeaders;
   } catch (error) {
-    return error.response.data;
+    return rejectWithValue(error.response.data);
   }
 });
 
