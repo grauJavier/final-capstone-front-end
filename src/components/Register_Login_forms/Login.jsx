@@ -1,12 +1,10 @@
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import sendLogin from '../../redux/actions/sendLogin';
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.user.errorLogin);
-  const notice = useSelector((state) => state.user.noticeLogin);
 
   const onSubmit = (data) => {
     dispatch(sendLogin(data));
@@ -37,8 +35,6 @@ const Login = () => {
           <p>{errors.user?.password?.message}</p>
         <input type="submit" />
       </form>
-      {notice && <p>{notice}</p>}
-      {error && <p>{error}</p>}
     </div>
   );
 };

@@ -7,11 +7,9 @@ const userSlice = createSlice({
   name: 'user',
   initialState: { 
     data: null,
-    errorRegister: null,
-    noticeRegister: null,
+    error: null,
+    notice: null,
     currentUser: null,
-    errorLogin: null,
-    noticeLogin: null,
     token: null
   },
   reducers: {},
@@ -19,32 +17,32 @@ const userSlice = createSlice({
     builder
       .addCase(sendRegistration.fulfilled, (state, action) => {
         state.data = action.payload.data;
-        state.errorRegister = null;
-        state.noticeRegister = action.payload.status.message;
+        state.error = null;
+        state.notice = action.payload.status.message;
       })
       .addCase(sendRegistration.rejected, (state, action) => {
-        state.errorRegister = action.payload.status.message;
-        state.noticeRegister = null;
+        state.error = action.payload.status.message;
+        state.notice = null;
       })
       .addCase(sendLogin.fulfilled, (state, action) => {
         state.currentUser = action.payload.body.status.data.user;
-        state.errorLogin = null;
-        state.noticeLogin = action.payload.body.status.message;
+        state.error = null;
+        state.notice = action.payload.body.status.message;
         state.token = action.payload.authorization;
       })
       .addCase(sendLogin.rejected, (state, action) => {
-        state.errorLogin = action.payload;
-        state.noticeLogin = null;
+        state.error = action.payload;
+        state.notice = null;
       })
       .addCase(sendLogout.fulfilled, (state, action) => {
         state.currentUser = null;
         state.token = null;
-        state.noticeLogin = action.payload.message;
-        state.errorLogin = null;
+        state.notice = action.payload.message;
+        state.error = null;
       })
       .addCase(sendLogout.rejected, (state, action) => {
-        state.noticeLogin = null;
-        state.errorLogin = action.payload.message;
+        state.notice = null;
+        state.error = action.payload.message;
       })
   },
 });

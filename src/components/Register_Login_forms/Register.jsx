@@ -1,12 +1,10 @@
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import sendRegistration from '../../redux/actions/sendRegistration';
 
 const Register = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.user.errorRegister);
-  const notice = useSelector((state) => state.user.noticeRegister);
 
   const onSubmit = (data) => {
     dispatch(sendRegistration(data));
@@ -44,8 +42,6 @@ const Register = () => {
           <p>{errors.user?.password?.message}</p>
         <input type="submit" />
       </form>
-      {notice && <p>{notice}</p>}
-      {error && <p>{error}</p>}
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Home from './components/home'
 import NotFound from './components/NotFound'
 import Register from './components/Register_Login_forms/Register'
 import Login from './components/Register_Login_forms/Login'
+import NoticeAlert from './components/NoticeAlert'
 import './App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <NoticeAlert />
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
