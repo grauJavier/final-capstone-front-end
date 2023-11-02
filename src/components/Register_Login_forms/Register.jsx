@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import sendRegistration from '../../redux/actions/sendRegistration';
+import sendRegistration from '../../redux/user/actions/sendRegistration';
 import UsernameInput from './inputs/UsernameInput';
 import EmailInput from './inputs/EmailInput';
 import PasswordInput from './inputs/PasswordInput';
