@@ -27,7 +27,7 @@ export default {
         'hide-message': {
           '0%': { transform: 'translatey(0)' },
           '50%': { transform: 'translatey(-50%)' },
-          '100%': { transform: 'translatey(-100%)' }
+          '100%': { transform: 'translatey(-110%)' }
         }
       },
       animation: {

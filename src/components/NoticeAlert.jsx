@@ -11,6 +11,7 @@ const NoticeAlert = () => {
     
     if (alertElement) {
       setTimeout(function() {
+        alertElement.classList.remove('animate-show-message');
         alertElement.classList.add('animate-hide-message');
         setTimeout(() => {
           alertElement.style.display = 'none';
@@ -20,6 +21,7 @@ const NoticeAlert = () => {
     
     if (noticeElement) {
       setTimeout(function() {
+        noticeElement.classList.remove('animate-show-message');
         noticeElement.classList.add('animate-hide-message');
         setTimeout(() => {
           noticeElement.style.display = 'none';
