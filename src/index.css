@@ -13,5 +13,5 @@
 }
 
 .forms-layout {
-  @apply flex flex-col items-center justify-center gap-5 min-h-screen font-titilium;
+  @apply flex flex-col items-center justify-center gap-5 h-90vh font-titilium;
 }

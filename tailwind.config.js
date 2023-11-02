@@ -33,6 +33,9 @@ export default {
       animation: {
         'show-message': 'show-message 0.3s linear forwards', 
         'hide-message': 'hide-message 0.3s linear forwards',
+      },
+      height: {
+        '90vh': '90vh',
       }
     },
   },
