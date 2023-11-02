@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import sendRegistration from '../../redux/actions/sendRegistration';
 import UsernameInput from './inputs/UsernameInput';
 import EmailInput from './inputs/EmailInput';
@@ -10,6 +11,13 @@ const Register = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const data = useSelector((state) => state.user.data);
+
+  useEffect(() => {
+    if (data){
+      navigate("/login");
+    }
+  }, [data, navigate]);
 
   const handleClick = () => {
     navigate("/login");
