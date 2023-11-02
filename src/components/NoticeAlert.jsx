@@ -32,8 +32,8 @@ const NoticeAlert = () => {
 
   return (
     <>
-      {notice && <p className="notice bg-emerald-950 text-white text-center fixed top-0 w-full font-poppins rounded-lg py-2 shadow-md shadow-black animate-show-message">{notice}</p>}
-      {error && <p className="alert bg-red-950 text-white text-center fixed top-0 w-full font-poppins rounded-lg py-2 shadow-md shadow-black animate-show-message">{error}</p>}
+      {notice && <p className="notice bg-emerald-950 notice-alert animate-show-message">{notice}</p>}
+      {error && <p className="alert bg-red-950 notice-alert animate-show-message">{error}</p>}
     </>
   );
 };

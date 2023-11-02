@@ -28,15 +28,19 @@ export default {
           '0%': { transform: 'translatey(0)' },
           '50%': { transform: 'translatey(-50%)' },
           '100%': { transform: 'translatey(-110%)' }
+        },
+        'hover-button': {
+          '0%,100%': {
+            'background-color': '#97bf0f',
+            'color': '#f2f3f0',
+          }
         }
       },
       animation: {
         'show-message': 'show-message 0.3s linear forwards', 
         'hide-message': 'hide-message 0.3s linear forwards',
+        'hover-button': 'hover-button 1s ease-in-out forwards'
       },
-      height: {
-        '90vh': '90vh',
-      }
     },
   },
   plugins: [],

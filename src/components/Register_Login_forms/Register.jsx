@@ -28,14 +28,16 @@ const Register = () => {
   };
 
   return (
-    <div className='bg-login-img bg-cover min-h-screen'>
+    <div className='bg-login-img bg-cover min-h-screen flex flex-col items-center'>
+      <img src="src/assets/logo.jpg" className="w-[150px] rounded-full border-2 border-white m-auto" />
+      <h1 className="font-titilium text-2xl text-zinc-50">REGISTER</h1>
       <form className="forms-layout" onSubmit={handleSubmit(onSubmit)}>
         <UsernameInput register={register} errors={errors} />
         <EmailInput register={register} errors={errors} />
         <PasswordInput register={register} errors={errors} />
         <input type="submit" className='forms-submit' value="Sign up" />
       </form>
-      <p className="text-center font-titilium">Already have an account? <a className="underline text-blue-800 cursor-pointer" onClick={handleClick}>Sign in</a></p>
+      <p className="text-center font-titilium mt-auto">Already have an account? <a className="underline text-blue-800 cursor-pointer" onClick={handleClick}>Sign in</a></p>
     </div>
   );
 };

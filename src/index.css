@@ -9,9 +9,13 @@
 }
 
 .forms-submit {
-  @apply bg-form-border-white text-form-green rounded-full py-2 px-5 font-bold;
+  @apply border-2 bg-form-border-white text-form-green rounded-full py-2 px-5 font-bold w-6/12 max-w-[170px] cursor-pointer hover:animate-hover-button;
 }
 
 .forms-layout {
-  @apply flex flex-col items-center justify-center gap-5 h-90vh font-titilium;
+  @apply flex flex-col items-center justify-center gap-5 m-auto w-full font-titilium;
+}
+
+.notice-alert {
+  @apply text-white text-center fixed top-0 left-0 right-0 ml-auto mr-auto w-full max-w-[500px] font-poppins rounded-lg py-2 shadow-md shadow-black;
 }
