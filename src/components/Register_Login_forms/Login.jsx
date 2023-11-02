@@ -13,11 +13,11 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <form className="bg-zinc-700 flex flex-col items-center justify-center gap-5 min-h-screen" onSubmit={handleSubmit(onSubmit)}>
+    <div className='bg-login-img bg-cover'>
+      <form className="forms-layout" onSubmit={handleSubmit(onSubmit)}>
         <EmailInput register={register} errors={errors} />
         <PasswordInput register={register} errors={errors} />
-        <input type="submit" />
+        <input type="submit" className='forms-submit' />
       </form>
     </div>
   );

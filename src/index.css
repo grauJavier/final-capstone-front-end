@@ -1,3 +1,17 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+
+.forms-inputs {
+  @apply bg-form-green border-2 border-form-border-white rounded-full text-form-border-white placeholder-form-border-white py-2 px-5 outline-0;
+}
+
+.forms-submit {
+  @apply bg-form-border-white text-form-green rounded-full py-2 px-5 font-bold;
+}
+
+.forms-layout {
+  @apply flex flex-col items-center justify-center gap-5 min-h-screen font-titilium;
+}

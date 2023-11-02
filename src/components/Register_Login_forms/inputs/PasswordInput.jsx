@@ -9,8 +9,9 @@ const PasswordInput = ({ register, errors }) => {
           })}
           placeholder='Password'
           type='password'
+          className="forms-inputs"
           />
-          <p>{errors.user?.password?.message}</p>
+          {errors.user?.password?.message && <p className='text-red-600 font-bold'>*{errors.user.password.message}</p>}
     </>
   );
 };

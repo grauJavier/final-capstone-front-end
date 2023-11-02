@@ -13,8 +13,9 @@ const EmailInput = ({ register, errors }) => {
           })}
           placeholder='Email'
           type='email'
+          className="forms-inputs"
       />
-      <p>{errors.user?.email?.message}</p>
+      {errors.user?.email?.message && <p className='text-red-600 font-bold'>*{errors.user.email.message}</p>}
     </>
   );
 };
