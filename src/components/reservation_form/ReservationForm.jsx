@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCities, fetchPlaces } from '../../redux/reservation_form/reservationSlice.js';
 import DatePicker from 'react-datepicker';
@@ -33,9 +33,6 @@ function ReservationForm() {
     }
   }, [selectedCity, dispatch, cities]);
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
   const handleSubmit = () => {
     if (!selectedCity || !selectedDate || !selectedPlace) {
       alert('Please make sure you have selected a city, place, and date.');
@@ -58,6 +55,9 @@ function ReservationForm() {
         console.error('Error submitting reservation', error);
       });
   };
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
   return (
     <div className="flex flex-col gap-3 m-3">
