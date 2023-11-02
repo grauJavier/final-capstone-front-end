@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
 
 .forms-inputs {
-  @apply bg-form-green border-2 border-form-border-white rounded-full text-form-border-white placeholder-form-border-white py-2 px-5 outline-0;
+  @apply bg-form-green border-2 border-form-border-white rounded-full text-form-border-white placeholder-form-border-white py-2 px-5 outline-0 w-11/12 max-w-screen-sm;
 }
 
 .forms-submit {
