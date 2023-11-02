@@ -8,6 +8,7 @@ import NoticeAlert from './components/NoticeAlert'
 import ProtectedRoute from './components/utils/ProtectedRoute'
 import PublicRoute from './components/utils/PublicRoutes'
 import './App.css'
+import ReservationForm from './components/reservation_form/ReservationForm'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route element={<ProtectedRoute user={user} />}>
           <Route index path="/" element={<Home />} />
+          <Route path="/reservation" element={<ReservationForm />} />
         </Route>
         <Route element={<PublicRoute user={user} />}>
           <Route path="/register" element={<Register />} />
