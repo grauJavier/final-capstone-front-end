@@ -7,6 +7,7 @@ import Login from './components/Register_Login_forms/Login'
 import NoticeAlert from './components/NoticeAlert'
 import ProtectedRoute from './components/utils/ProtectedRoute'
 import PublicRoute from './components/utils/PublicRoutes'
+import PlacesForm from './components/PlacesForm'
 import './App.css'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route element={<PublicRoute user={user} />}>
           <Route path="/login" element={<Login />} />
         </Route>
+        <Route path="/upload" element={<PlacesForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
