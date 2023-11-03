@@ -10,13 +10,13 @@ export default {
         'login-green': '#97be01',
         'form-green': '#97bf0f',
         'form-border-white': '#f2f3f0',
+        'lime-green': '#f1f1f1',
+        'golden-yellow': '#ffc600',
+        'turquoise-blue': '#10bbb5',
+        'charcoal-gray': '#252525',
       },
       backgroundImage: {
         'login-img': "linear-gradient(to top, rgba(150, 190, 0, 0.8), rgba(150, 190, 0, 0.8)), url('./src/assets/login-img.jpg')",
-      },
-      fontFamily: {
-        'titilium': ["Titillium Web", 'sans-serif'],
-        'poppins': ["Poppins", "sans-serif"],
       },
       keyframes: {
         'show-message': {
@@ -41,6 +41,9 @@ export default {
         'hide-message': 'hide-message 0.3s linear forwards',
         'hover-button': 'hover-button 1s ease-in-out forwards'
       },
+      dropShadow: {
+        'logo': '0px 15px 60px rgba(255,255,255, 0.8)',
+      }
     },
   },
   plugins: [],

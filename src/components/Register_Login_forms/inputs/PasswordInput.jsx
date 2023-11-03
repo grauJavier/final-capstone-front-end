@@ -35,7 +35,7 @@ const PasswordInput = ({ register, errors }) => {
             {NotVisibleEye && <AiFillEyeInvisible className="text-2xl" onClick={showPasword} />}
             {visibleEye && <AiFillEye className="text-2xl" onClick={hidePassword} />}
       </div>
-          {errors.user?.password?.message && <p className='text-red-600 font-bold'>*{errors.user.password.message}</p>}
+          {errors.user?.password?.message && <p className='text-white italic'>*{errors.user.password.message}</p>}
     </>
   );
 };
