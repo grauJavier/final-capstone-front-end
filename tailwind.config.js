@@ -43,6 +43,9 @@ export default {
       },
       dropShadow: {
         'logo': '0px 15px 60px rgba(255,255,255, 0.8)',
+      },
+      boxShadow: {
+        'menu': '0 0 20px 5px #97be01',
       }
     },
   },
