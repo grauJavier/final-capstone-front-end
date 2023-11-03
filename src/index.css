@@ -1,3 +1,44 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+
+* {
+  --primary-font: 'Poppins', sans-serif;
+  --secondary-font: 'Titillium Web', sans-serif;
+  --lime-green: #99c110;
+  --golden-yellow: #ffc600;
+  --turquoise-blue: #10bbb5;
+  --charcoal-gray: #252525;
+}
+
+.primary-font {
+  font-family: var(--primary-font);
+}
+
+.secondary-font {
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.forms-inputs {
+  @apply bg-form-green border-2 border-form-border-white rounded-full text-form-border-white placeholder-form-border-white py-2 px-5 outline-0 w-11/12 max-w-screen-sm focus:border-orange-500;
+}
+
+.forms-submit {
+  @apply border-2 bg-form-border-white text-form-green rounded-full py-2 px-5 font-bold w-6/12 max-w-[170px] cursor-pointer hover:animate-hover-button;
+}
+
+.forms-layout {
+  @apply flex flex-col items-center justify-center gap-5 m-auto w-full primary-font;
+}
+
+.notice-alert {
+  @apply primary-font text-white text-center fixed top-0 left-0 right-0 ml-auto mr-auto w-full max-w-[500px] rounded-lg py-2 shadow-md shadow-black;
+}
+
+.logo-image {
+  @apply w-[150px] m-auto drop-shadow-logo;
+}
