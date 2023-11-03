@@ -14,6 +14,13 @@ export default {
         'golden-yellow': '#ffc600',
         'turquoise-blue': '#10bbb5',
         'charcoal-gray': '#252525',
+        'limerick': '#98BF11',
+        'platinum': '#E4E5E9',
+        'argent': '#C1C1C1',
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        'titillium': ['Titillium Web', 'sans-serif'],
       },
       backgroundImage: {
         'login-img': "linear-gradient(to top, rgba(150, 190, 0, 0.8), rgba(150, 190, 0, 0.8)), url('./src/assets/login-img.jpg')",

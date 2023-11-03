@@ -3,6 +3,8 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 * {
   --primary-font: 'Poppins', sans-serif;
@@ -41,4 +43,9 @@
 
 .logo-image {
   @apply w-[150px] m-auto drop-shadow-logo;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: #98bf11;
 }
