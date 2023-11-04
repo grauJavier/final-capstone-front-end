@@ -36,8 +36,8 @@ const ImageUploader = ({ setValue }) => {
   }, [image]);
 
   return (
-    <div>
-      <input type="file" onChange={handleImageChange} required />
+    <div className='flex flex-col items-end gap-1'>
+      <input type="file" onChange={handleImageChange} className="w-80 forms-inputs max-sm:w-52" required />
       {isImageRequired && <p className='text-red-500'>*Upload an image</p>}
     </div>
   );

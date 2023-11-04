@@ -13,73 +13,127 @@ const PlacesForm = () => {
 
   useEffect(() => {
     dispatch(fetchCities());
-  }, [dispatch])
+  }, [dispatch]);
 
   const onSubmit = (data) => {
-    dispatch(sendPlaces({user_id: user.id, body: data}))
+    dispatch(sendPlaces({ user_id: user.id, body: data }));
   };
 
   return (
-    <div className='bg-login-img bg-cover min-h-screen flex flex-col items-center lg:ml-[15vw]'>
-      <h1 className="font-titilium text-2xl text-zinc-50">NEW PLACE</h1>
-      <form className="forms-layout" onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("place.name", {
-          required: { value: true, message: 'Name is required' }
-        })} placeholder='Name' type="text" />
-        {errors.place?.name?.message && <p className='text-white italic'>*{errors.place.name.message}</p>}
-        <ImageUploader register={register} setValue={setValue} errors={errors} />
-        <input {...register("place.description", {
+    <div className="lg:ml-[15%] bg-login-img bg-cover min-h-screen flex flex-col items-center justify-center">
+      <div className="container flex flex-col items-center justify-center px-24 py-16">
+        <h1 className="secondary-font text-4xl text-zinc-50 mb-12 text-center">Add new place</h1>
+        <form
+          className="flex flex-col gap-5 m-3 mt-0 forms-layout"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <input
+            {...register('place.name', {
+              required: { value: true, message: 'Name is required' }
+            })} placeholder='Name' type="text" className="w-80 forms-inputs max-sm:w-52" />
+            {errors.place?.name?.message && <p className='text-white italic'>*{errors.place.name.message}</p>}
+
+          <select
+            {...register('place.city_id', {
+              required: { value: true, message: 'Select a location' }
+            })}
+            id="citySelect"
+            placeholder="Select Location"
+            className="w-80 forms-inputs max-sm:w-52"
+          >
+            <option value="">Select Location</option>
+            {cities.map((city, index) => (
+              <option key={index} value={city.id}>
+                {city.name}
+              </option>
+            ))}
+          </select>
+          {errors.place?.city_id?.message && <p className='text-white italic'>*{errors.place.city_id.message}</p>}
+
+          <input
+            {...register("place.description", {
           required: { value: true, message: 'Description is required' }
-        })} placeholder='description' type="text" />
-        {errors.place?.description?.message && <p className='text-white italic'>*{errors.place.description.message}</p>}
-        <select {...register("place.city_id", {
-          required: { value: true, message: 'Select a city' }
-        })}>
-          <option value="">Choose a city</option>
-          {cities.map((city, index) => 
-            <option key={index} value={city.id}>{city.name}</option>
-          )}
-        </select>
-        {errors.place?.city_id?.message && <p className='text-white italic'>*{errors.place.city_id.message}</p>}
-        <p>Aditional information</p>
-        <input {...register("details.place_type", {
-          required: { value: true, message: 'Introduce a place type' }
-        })} placeholder='Place type' type="text" />
-        {errors.details?.place_type?.message && <p className='text-white italic'>*{errors.details.place_type.message}</p>}
-        <input {...register("details.property_type", {
-          required: { value: true, message: 'Introduce a property type' }
-        })} placeholder='Property type' type="text" />
-        {errors.details?.property_type?.message && <p className='text-white italic'>*{errors.details.property_type.message}</p>}
-        <input {...register("details.bedrooms", {
-          required: { value: true, message:'Introduce the amount of bedrooms' },
-          validate: {
-            isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
-          }
-        })} placeholder='Number of Bedrooms' type='number' />
-        {errors.details?.bedrooms?.message && <p className='text-white italic'>*{errors.details.bedrooms.message}</p>}
-        <input {...register("details.beds", {
-          required: { value: true, message: 'Introduce the number of beds' },
-          validate: {
-            isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
-          }
-        })} placeholder='Number of beds' type='number' />
-        {errors.details?.beds?.message && <p className='text-white italic'>*{errors.details.beds.message}</p>}
-        <input {...register("details.bathrooms", {
-          required: { value: true, message: 'Introduce the number of bathrooms' },
-          validate: {
-            isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
-          }
-        })} placeholder='Number of bathrooms' type='number' />
-        {errors.details?.bathrooms?.message && <p className='text-white italic'>*{errors.details.bathrooms.message}</p>}
-        <input {...register("details.price", {
-          required: { value: true, message: 'Introduce the price' },
-          validate: {
-            isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
-          }
-        })} placeholder='Price' type='number' />
-        {errors.details?.price?.message && <p className='text-white italic'>*{errors.details.price.message}</p>}
-        <input type="submit" className='forms-submit' value="Sign up" />
-      </form>
+        })}
+            placeholder="Add a description"
+            className="w-80 forms-inputs max-sm:w-52"
+          />
+          {errors.place?.description?.message && <p className='text-white italic'>*{errors.place.description.message}</p>}
+
+          <ImageUploader setValue={setValue} />
+          <p>Aditional information</p>
+          <input
+            {...register("details.place_type", {
+              required: { value: true, message: 'Introduce a place type' }
+            })}
+            placeholder="Place type"
+            className="w-80 forms-inputs max-sm:w-52"
+          />
+          {errors.details?.place_type?.message && <p className='text-white italic'>*{errors.details.place_type.message}</p>}
+
+          <input
+            {...register("details.property_type", {
+              required: { value: true, message: 'Introduce a property type' }
+            })}
+            placeholder="Property type"
+            className="w-80 forms-inputs max-sm:w-52"
+          />
+          {errors.details?.property_type?.message && <p className='text-white italic'>*{errors.details.property_type.message}</p>}
+
+          <input
+            {...register("details.bedrooms", {
+              required: { value: true, message:'Introduce the amount of bedrooms' },
+              validate: {
+                isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
+              }
+            })}
+            placeholder="Number of Bedrooms"
+            type="number"
+            className="w-80 forms-inputs max-sm:w-52"
+          />
+          {errors.details?.bedrooms?.message && <p className='text-white italic'>*{errors.details.bedrooms.message}</p>}
+
+          <input
+            {...register("details.beds", {
+              required: { value: true, message: 'Introduce the number of beds' },
+              validate: {
+                isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
+              }
+            })}
+            placeholder="Number of beds"
+            type="number"
+            className="w-80 forms-inputs max-sm:w-52"
+          />
+          {errors.details?.beds?.message && <p className='text-white italic'>*{errors.details.beds.message}</p>}
+
+          <input
+            {...register("details.bathrooms", {
+              required: { value: true, message: 'Introduce the number of bathrooms' },
+              validate: {
+                isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
+              }
+            })}
+            placeholder="Number of bathrooms"
+            type="number"
+            className="w-80 forms-inputs max-sm:w-52"
+            id="citySelect"
+          />
+          {errors.details?.bathrooms?.message && <p className='text-white italic'>*{errors.details.bathrooms.message}</p>}
+
+          <input
+            {...register("details.price", {
+              required: { value: true, message: 'Introduce the price' },
+              validate: {
+                isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
+              }
+            })}
+            placeholder="Price"
+            type="number"
+            className="w-80 forms-inputs max-sm:w-52"
+          />
+          {errors.details?.price?.message && <p className='text-white italic'>*{errors.details.price.message}</p>}
+          <input type="submit" className="forms-submit" value="Add new place" />
+        </form>
+      </div>
     </div>
   );
 };
