@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import deleteReservation from '../../redux/myReservations/actions/deleteReservation';
 import fetchMyReservations from '../../redux/myReservations/actions/fetchMyReservations';
@@ -35,7 +35,6 @@ function MyReservations() {
             <div
               className={`flex ${flexDirection} bg-${backgroundColors[reservation.id % 4]}`}
               key={reservation.id}
-              reservation-id={reservation.id}
             >
               <div
                 className="w-[50%] aspect-square"
