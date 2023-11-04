@@ -1,6 +1,6 @@
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiFillCloseCircle } from 'react-icons/ai';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Logout from '../Register_Login_forms/Logout';
 
@@ -25,8 +25,13 @@ const NavBar = () => {
 
   const showHideNav = () => {
     if (show) {
-      setShow(false);
-      setShowItem(true);
+      const container = document.getElementById('menu-container');
+      container.classList.remove('animate-show-menu');
+      container.classList.add('animate-hide-menu');
+      setTimeout(() => {
+        setShow(false);
+        setShowItem(true);
+      }, 600);
     } else {
       setShow(true);
       setShowItem(false);
@@ -39,7 +44,7 @@ const NavBar = () => {
     <>
       {showItem && windowWidth < 1024 && <GiHamburgerMenu className="fixed ml-[15px] mt-[15px] text-[1.5rem]" onClick={showHideNav} />}
       { (show || windowWidth >= 1024) && 
-      <div className="min-h-screen w-3/4 max-w-[320px] flex flex-col primary-font fixed z-50 bg-white shadow-menu lg:shadow-none lg:border-r-2 lg:border-login-green lg:max-w-[15vw]" id="menu-container">
+      <div className="min-h-screen w-3/4 max-w-[320px] flex flex-col primary-font fixed z-50 bg-white shadow-menu animate-show-menu lg:shadow-none lg:border-r-2 lg:border-login-green lg:max-w-[15vw]" id="menu-container">
         <AiFillCloseCircle className="ml-[15px] mt-[15px] text-[1.5rem] lg:hidden" onClick={showHideNav}/>
         <img src="src/assets/logo-black.png" className="w-[100px] ml-auto mr-auto lg:mt-auto" />
         <nav className="m-auto ml-[15px] mr-0">
