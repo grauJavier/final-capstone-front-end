@@ -1,3 +1,95 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+
+* {
+  --primary-font: 'Poppins', sans-serif;
+  --secondary-font: 'Titillium Web', sans-serif;
+  --lime-green: #99c110;
+  --golden-yellow: #ffc600;
+  --turquoise-blue: #10bbb5;
+  --charcoal-gray: #252525;
+  --platinum: #e4e5e9;
+}
+
+.primary-font {
+  font-family: var(--primary-font);
+}
+
+.secondary-font {
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.bg-lime-green {
+  background-color: var(--lime-green);
+}
+
+.bg-golden-yellow {
+  background-color: var(--golden-yellow);
+}
+
+.bg-turquoise-blue {
+  background-color: var(--turquoise-blue);
+}
+
+.bg-charcoal-gray {
+  background-color: var(--charcoal-gray);
+}
+
+.bg-platinum {
+  background-color: var(--platinum);
+}
+
+.dialog-triangle::after {
+  content: '';
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+  border-top: 2rem solid transparent;
+  position: absolute;
+}
+
+.dialog-triangle.bg-lime-green::after {
+  border-left-color: var(--lime-green);
+  left: 49%;
+}
+
+.dialog-triangle.bg-turquoise-blue::after {
+  border-left-color: var(--turquoise-blue);
+  left: 49%;
+}
+
+.dialog-triangle.bg-golden-yellow::after {
+  border-right-color: var(--golden-yellow);
+  right: 49%;
+}
+
+.dialog-triangle.bg-charcoal-gray::after {
+  border-right-color: var(--charcoal-gray);
+  right: 49%;
+}
+
+#my-reservations {
+  background-image: url('./assets/images/background-my-reservations.jpeg');
+  background-position: center;
+  background-size: cover;
+  min-height: 100lvh;
+  height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .dialog-triangle.bg-lime-green::after,
+  .dialog-triangle.bg-turquoise-blue::after {
+    left: calc(49% + 8.5vw);
+  }
+
+  .dialog-triangle.bg-golden-yellow::after,
+  .dialog-triangle.bg-charcoal-gray::after {
+    right: calc(49% - 8.5vw);
+  }
+}
