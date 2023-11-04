@@ -1,21 +1,18 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import ImageUploader from './UploadFile';
-import { getCity } from '../redux/city/citySlice';
+import fetchCities from '../redux/reservationForm/actions/fetchCities';
 import { sendPlaces } from '../redux/places/placesSlice';
-
 
 const PlacesForm = () => {
   const { register, handleSubmit, setValue } = useForm();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const cities = useSelector((state) => state.city.cities);
+  const cities = useSelector((state) => state.reservation.cities);
   const user = useSelector((state) => state.user.currentUser);
 
   useEffect(() => {
-    dispatch(getCity());
+    dispatch(fetchCities());
   }, [dispatch])
 
   const onSubmit = (data) => {
