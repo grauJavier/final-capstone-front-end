@@ -57,55 +57,62 @@ function ReservationForm() {
 
   return (
     <section className="lg:ml-[15%] bg-login-img bg-cover min-h-screen flex flex-col items-center justify-center">
-      <h2 className="secondary-font text-4xl text-zinc-50 mb-12">Add a new reservation</h2>
-      <form className="flex flex-col gap-5 m-3 mt-0 forms-layout">
-        <div>
-          <select
-            id="citySelect"
-            value={selectedCity}
-            onChange={(e) => setSelectedCity(e.target.value)}
-            placeholder='Select a City'
-            className='!w-80 forms-inputs'
-            required
-          >
-            <option value="">Select a City</option>
-            {cities.map((city) => (
-              <option key={city.id} value={city.id}>
-                {city.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <select
-            id="placeSelect"
-            value={selectedPlace}
-            onChange={(e) => setSelectedPlace(e.target.value)}
-            placeholder='Select a Place'
-            className='!w-80 forms-inputs'
-            required
-          >
-            <option value="">Select a Place</option>
-            {places.map((place) => (
-              <option key={place.id} value={place.id}>
-                {place.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <DatePicker
-            id="datePicker"
-            selected={selectedDate}
-            onChange={(date) => setSelectedDate(date)}
-            minDate={today}
-            placeholderText='Select a Date'
-            className='!w-80 forms-inputs'
-            required
-          />
-        </div>
-        <button className="forms-submit" onClick={handleSubmit}>Submit</button>
-      </form>
+      <div className="container flex flex-col items-center justify-center p-24 pb-40">
+        <h2 className="secondary-font text-4xl text-zinc-50 mb-12 text-center">
+          Add a new reservation
+        </h2>
+        <form className="flex flex-col gap-5 m-3 mt-0 forms-layout">
+          <div>
+            <select
+              id="citySelect"
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.target.value)}
+              placeholder="Select a City"
+              className="w-80 forms-inputs max-sm:w-52"
+              required
+            >
+              <option value="">Select a City</option>
+              {cities.map((city) => (
+                <option key={city.id} value={city.id}>
+                  {city.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <select
+              id="placeSelect"
+              value={selectedPlace}
+              onChange={(e) => setSelectedPlace(e.target.value)}
+              placeholder="Select a Place"
+              className="w-80 forms-inputs max-sm:w-52"
+              required
+            >
+              <option value="">Select a Place</option>
+              {places.map((place) => (
+                <option key={place.id} value={place.id}>
+                  {place.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex flex-col items-center justify-center w-full">
+            <DatePicker
+              id="datePicker"
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              minDate={today}
+              placeholderText="Select a Date"
+              className="w-80 forms-inputs max-sm:w-52"
+              autoComplete="off"
+              required
+            />
+          </div>
+          <button className="forms-submit min-w-fit" onClick={handleSubmit}>
+            Submit
+          </button>
+        </form>
+      </div>
     </section>
   );
 }
