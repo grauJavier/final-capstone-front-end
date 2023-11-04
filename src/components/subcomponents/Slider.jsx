@@ -6,6 +6,7 @@ import { getPlaces } from "../../redux/places/placesSlice"
 const Slideshow = () => {
   const dispatch = useDispatch();
   const places = useSelector((state) => state.placesSlice.places);
+  console.log(places)
 
   useEffect(() => {
     dispatch(getPlaces())

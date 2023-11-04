@@ -41,30 +41,15 @@ export default {
             'background-color': '#97bf0f',
             'color': '#f2f3f0',
           }
-        },
-        'show-menu': {
-          '0%': { transform: 'translatex(-100%)' },
-          '50%': { transform: 'translatex(-50%)' },
-          '100%': { transform: 'translatex(0)' }
-        },
-        'hide-menu': {
-          '0%': { transform: 'translatex(0)' },
-          '50%': { transform: 'translatex(-50%)' },
-          '100%': { transform: 'translatex(-100%)' }
         }
       },
       animation: {
         'show-message': 'show-message 0.3s linear forwards', 
         'hide-message': 'hide-message 0.3s linear forwards',
-        'hover-button': 'hover-button 1s ease-in-out forwards',
-        'show-menu': 'show-menu 0.5s linear forwards',
-        'hide-menu': 'hide-menu 0.5s linear forwards'
+        'hover-button': 'hover-button 1s ease-in-out forwards'
       },
       dropShadow: {
         'logo': '0px 15px 60px rgba(255,255,255, 0.8)',
-      },
-      boxShadow: {
-        'menu': '0 0 20px 5px #97be01',
       }
     },
   },

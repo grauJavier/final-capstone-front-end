@@ -7,8 +7,7 @@ import Login from './components/Register_Login_forms/Login'
 import NoticeAlert from './components/NoticeAlert'
 import ProtectedRoute from './components/utils/ProtectedRoute'
 import PublicRoute from './components/utils/PublicRoutes'
-import NavBar from './components/Navigation_bar/NavBar'
-import './App.css'
+import './index.css'
 
 function App() {
 
@@ -17,7 +16,6 @@ function App() {
   return (
     <BrowserRouter>
       <NoticeAlert />
-      { user && <NavBar />}
       <Routes>
         <Route element={<ProtectedRoute user={user} />}>
           <Route index path="/" element={<Places />} />
