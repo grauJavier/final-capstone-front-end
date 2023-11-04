@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCities, fetchPlaces } from '../../redux/reservation_form/reservationSlice.js';
+import fetchCities from '../../redux/reservationForm/actions/fetchCities';
+import fetchPlaces from '../../redux/reservationForm/actions/fetchPlacesByCityId.js';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
@@ -34,11 +35,6 @@ function ReservationForm() {
   }, [selectedCity, dispatch, cities]);
 
   const handleSubmit = () => {
-    if (!selectedCity || !selectedDate || !selectedPlace) {
-      alert('Please make sure you have selected a city, place, and date.');
-      return;
-    }
-
     // Send the data to the server
     const data = {
       user_id: userId,
@@ -60,14 +56,14 @@ function ReservationForm() {
   today.setHours(0, 0, 0, 0);
 
   return (
-    <div className="flex flex-col gap-3 m-3">
+    <form className="flex flex-col gap-3 m-3">
       <div>
         <label htmlFor="citySelect">Select a City:</label>
         <select
           id="citySelect"
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
-        >
+          required >
           <option value="">Select a City</option>
           {cities.map((city) => (
             <option key={city.id} value={city.id}>
@@ -82,7 +78,7 @@ function ReservationForm() {
           id="placeSelect"
           value={selectedPlace}
           onChange={(e) => setSelectedPlace(e.target.value)}
-        >
+          required >
           <option value="">Select a Place</option>
           {places.map((place) => (
             <option key={place.id} value={place.id}>
@@ -98,10 +94,10 @@ function ReservationForm() {
           selected={selectedDate}
           onChange={(date) => setSelectedDate(date)}
           minDate={today}
-        />
+          required />
       </div>
       <button onClick={handleSubmit}>Submit</button>
-    </div>
+    </form>
   );
 }
 
