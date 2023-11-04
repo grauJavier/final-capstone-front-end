@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import sendRegistration from '../../redux/actions/sendRegistration';
+import sendRegistration from '../../redux/user/actions/sendRegistration';
 import UsernameInput from './inputs/UsernameInput';
 import EmailInput from './inputs/EmailInput';
 import PasswordInput from './inputs/PasswordInput';

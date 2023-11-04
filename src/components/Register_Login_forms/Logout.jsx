@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import sendLogout from "../../redux/actions/sendLogout";
+import sendLogout from "../../redux/user/actions/sendLogout";
 
 const Logout = () => {
   const dispatch = useDispatch();
