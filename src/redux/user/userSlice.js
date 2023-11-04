@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import sendRegistration from '../actions/sendRegistration';
-import sendLogin from '../actions/sendLogin';
-import sendLogout from '../actions/sendLogout';
+import sendRegistration from './actions/sendRegistration';
+import sendLogin from './actions/sendLogin';
+import sendLogout from './actions/sendLogout';
 
 const userSlice = createSlice({
   name: 'user',
