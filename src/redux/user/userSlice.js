@@ -5,7 +5,7 @@ import sendLogout from './actions/sendLogout';
 
 const userSlice = createSlice({
   name: 'user',
-  initialState: { 
+  initialState: {
     data: null,
     error: null,
     notice: null,
@@ -43,8 +43,8 @@ const userSlice = createSlice({
       .addCase(sendLogout.rejected, (state, action) => {
         state.notice = null;
         state.error = action.payload.message;
-      })
-  },
+      });
+  }
 });
 
 export const selectUserId = (state) => {

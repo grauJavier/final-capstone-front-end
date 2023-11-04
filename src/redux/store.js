@@ -1,18 +1,40 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import userReducer from './user/userSlice';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import sessionStorage from 'redux-persist/lib/storage/session'; // defaults to localStorage for web
+import { createTransform } from 'redux-persist';
+import placesSlice from "./places/placesSlice";
 import reservationReducer from './reservationForm/reservationSlice.js';
 import myReservationsReducer from './myReservations/myReservationsSlice.js';
 
+// Create a personalized transform.
+const userTransform = createTransform(
+  (inboundState) => {
+    return {
+      currentUser: inboundState.currentUser,
+      token: inboundState.token
+    };
+  },
+
+  (outboundState) => {
+    return {
+      ...outboundState
+    };
+  },
+  // Apply this transform only to the user state.
+  { whitelist: ['user'] }
+);
+
 const persistConfig = {
   key: 'root',
-  storage,
+  storage: sessionStorage,
   whitelist: ['user'],
+  transforms: [userTransform]
 };
 
 const reducer = combineReducers({
   user: userReducer,
+  placesSlice,
   reservation: reservationReducer,
   myReservations: myReservationsReducer,
 });

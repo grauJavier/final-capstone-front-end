@@ -8,8 +8,9 @@ const UsernameInput = ({ register, errors }) => {
             required: { value: true, message: 'Username is required' }
           })}
           placeholder='Username'
+          className='forms-inputs'
           />
-          <p>{errors.user?.username?.message}</p>
+          {errors.user?.username?.message && <p className='text-white italic'>*{errors.user.username.message}</p>}
     </>
   );
 };

@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 * {
   --primary-font: 'Poppins', sans-serif;
@@ -43,6 +45,31 @@
 
 .bg-platinum {
   background-color: var(--platinum);
+}
+
+.forms-inputs {
+  @apply bg-form-green border-2 border-form-border-white rounded-full text-form-border-white placeholder-form-border-white py-2 px-5 outline-0 w-11/12 max-w-screen-sm focus:border-orange-500;
+}
+
+.forms-submit {
+  @apply border-2 bg-form-border-white text-form-green rounded-full py-2 px-5 font-bold w-6/12 max-w-[170px] cursor-pointer hover:animate-hover-button;
+}
+
+.forms-layout {
+  @apply flex flex-col items-center justify-center gap-5 m-auto w-full primary-font;
+}
+
+.notice-alert {
+  @apply primary-font text-white text-center fixed top-0 left-0 right-0 z-50 ml-auto mr-auto w-full max-w-[500px] rounded-lg py-2 shadow-md shadow-black;
+}
+
+.logo-image {
+  @apply w-[150px] m-auto drop-shadow-logo;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: #98bf11;
 }
 
 .dialog-triangle::after {
@@ -93,3 +120,4 @@
     right: calc(49% - 8.5vw);
   }
 }
+
