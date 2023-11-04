@@ -15,7 +15,7 @@ const EmailInput = ({ register, errors }) => {
           type='email'
           className="forms-inputs"
       />
-      {errors.user?.email?.message && <p className='text-red-600 font-bold'>*{errors.user.email.message}</p>}
+      {errors.user?.email?.message && <p className=' text-white italic'>*{errors.user.email.message}</p>}
     </>
   );
 };

@@ -10,7 +10,7 @@ const UsernameInput = ({ register, errors }) => {
           placeholder='Username'
           className='forms-inputs'
           />
-          {errors.user?.username?.message && <p className='text-red-600 font-bold'>*{errors.user.username.message}</p>}
+          {errors.user?.username?.message && <p className='text-white italic'>*{errors.user.username.message}</p>}
     </>
   );
 };

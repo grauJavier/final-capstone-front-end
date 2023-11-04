@@ -1,8 +1,9 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import userReducer from './user/userSlice';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import sessionStorage from 'redux-persist/lib/storage/session'; // defaults to localStorage for web
 import { createTransform } from 'redux-persist';
+import placesSlice from "./places/placesSlice";
 
 // Create a personalized transform.
 const userTransform = createTransform(
@@ -24,13 +25,14 @@ const userTransform = createTransform(
 
 const persistConfig = {
   key: 'root',
-  storage,
+  storage: sessionStorage,
   whitelist: ['user'],
   transforms: [userTransform]
 };
 
 const reducer = combineReducers({
-  user: userReducer
+  user: userReducer,
+  placesSlice
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
