@@ -4,6 +4,8 @@ import { persistStore, persistReducer } from 'redux-persist';
 import sessionStorage from 'redux-persist/lib/storage/session'; // defaults to localStorage for web
 import { createTransform } from 'redux-persist';
 import placesSlice from "./places/placesSlice";
+import reservationReducer from './reservationForm/reservationSlice.js';
+import myReservationsReducer from './myReservations/myReservationsSlice.js';
 
 // Create a personalized transform.
 const userTransform = createTransform(
@@ -32,7 +34,9 @@ const persistConfig = {
 
 const reducer = combineReducers({
   user: userReducer,
-  placesSlice
+  placesSlice,
+  reservation: reservationReducer,
+  myReservations: myReservationsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

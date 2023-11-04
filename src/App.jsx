@@ -9,6 +9,8 @@ import ProtectedRoute from './components/utils/ProtectedRoute'
 import PublicRoute from './components/utils/PublicRoutes'
 import NavBar from './components/Navigation_bar/NavBar'
 import './App.css'
+import ReservationForm from './components/reservationForm/ReservationForm'
+import MyReservations from './components/myReservations/MyReservations.jsx'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
       <Routes>
         <Route element={<ProtectedRoute user={user} />}>
           <Route index path="/" element={<Places />} />
+          <Route path="/reservation" element={<ReservationForm />} />
+          <Route path="/my-reservations" element={<MyReservations />} />
         </Route>
         <Route element={<PublicRoute user={user} />}>
           <Route path="/register" element={<Register />} />
