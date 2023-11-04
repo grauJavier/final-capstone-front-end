@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import userReducer from './user/userSlice';
+import cityReducer from './city/citySlice';
 import { persistStore, persistReducer } from 'redux-persist';
 import sessionStorage from 'redux-persist/lib/storage/session'; // defaults to localStorage for web
 import { createTransform } from 'redux-persist';
@@ -32,7 +33,8 @@ const persistConfig = {
 
 const reducer = combineReducers({
   user: userReducer,
-  placesSlice
+  placesSlice,
+  city: cityReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

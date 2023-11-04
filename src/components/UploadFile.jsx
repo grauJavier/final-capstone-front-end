@@ -29,7 +29,7 @@ const ImageUploader = ({ setValue }) => {
   return (
     <div>
       <input type="file" onChange={handleImageChange} />
-      <button onClick={handleUpload}>Subir Imagen</button>
+      <button type="button" onClick={handleUpload}>Subir Imagen</button>
     </div>
   );
 };

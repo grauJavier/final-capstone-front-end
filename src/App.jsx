@@ -22,6 +22,7 @@ function App() {
       <Routes>
         <Route element={<ProtectedRoute user={user} />}>
           <Route index path="/" element={<Places />} />
+          <Route path="/new-place" element={<PlacesForm />} />
         </Route>
         <Route element={<PublicRoute user={user} />}>
           <Route path="/register" element={<Register />} />
@@ -29,7 +30,6 @@ function App() {
         <Route element={<PublicRoute user={user} />}>
           <Route path="/login" element={<Login />} />
         </Route>
-        <Route path="/upload" element={<PlacesForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
