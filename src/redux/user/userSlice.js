@@ -47,4 +47,12 @@ const userSlice = createSlice({
   }
 });
 
+export const selectUserId = (state) => {
+  if (state.user.currentUser) {
+    return state.user.currentUser.id;
+  }
+  return null;
+};
+
+
 export default userSlice.reducer;
