@@ -38,7 +38,7 @@
 }
 
 .notice-alert {
-  @apply primary-font text-white text-center fixed top-0 left-0 right-0 ml-auto mr-auto w-full max-w-[500px] rounded-lg py-2 shadow-md shadow-black;
+  @apply primary-font text-white text-center fixed top-0 left-0 right-0 z-50 ml-auto mr-auto w-full max-w-[500px] rounded-lg py-2 shadow-md shadow-black;
 }
 
 .logo-image {
