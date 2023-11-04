@@ -11,6 +11,7 @@ const NavBar = () => {
   const navigate = useNavigate();
   const [windowWidth, setwindowWidth] = useState(window.innerWidth);
 
+  // Find the right width when the window resize.
   useEffect(() => {
     const handleResize = () => {
       setwindowWidth(window.innerWidth);
@@ -23,7 +24,22 @@ const NavBar = () => {
     };
   }, []);
 
-  const showHideNav = () => {
+  // Hide the NavBar when tapping outside of the element.
+  const hideNav = (event) => {
+    const container = document.getElementById('menu-container');
+    if (event.target !== container) {
+      container.classList.remove('animate-show-menu');
+      container.classList.add('animate-hide-menu');
+      window.removeEventListener('click', hideNav);
+      setTimeout(() => {
+        setShow(false);
+        setShowItem(true);
+      }, 600);
+    }
+  };
+
+  const showHideNav = (event) => {
+    event.stopPropagation();
     if (show) {
       const container = document.getElementById('menu-container');
       container.classList.remove('animate-show-menu');
@@ -35,6 +51,7 @@ const NavBar = () => {
     } else {
       setShow(true);
       setShowItem(false);
+      window.addEventListener('click', hideNav);
     }
   };
 
