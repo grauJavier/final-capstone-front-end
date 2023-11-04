@@ -51,7 +51,7 @@
 }
 
 .forms-submit {
-  @apply border-2 bg-form-border-white text-form-green rounded-full py-2 px-5 font-bold w-6/12 max-w-[170px] cursor-pointer hover:animate-hover-button;
+  @apply border-2 bg-form-border-white text-form-green rounded-full py-2 px-5 font-bold max-w-[170px] cursor-pointer hover:animate-hover-button;
 }
 
 .forms-layout {
