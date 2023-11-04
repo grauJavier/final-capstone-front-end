@@ -8,7 +8,8 @@ import NoticeAlert from './components/NoticeAlert'
 import ProtectedRoute from './components/utils/ProtectedRoute'
 import PublicRoute from './components/utils/PublicRoutes'
 import './App.css'
-import ReservationForm from './components/reservation_form/ReservationForm'
+import ReservationForm from './components/reservationForm/ReservationForm'
+import MyReservations from './components/myReservations/MyReservations.jsx'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route element={<ProtectedRoute user={user} />}>
           <Route index path="/" element={<Home />} />
           <Route path="/reservation" element={<ReservationForm />} />
+          <Route path="/my-reservations" element={<MyReservations />} />
         </Route>
         <Route element={<PublicRoute user={user} />}>
           <Route path="/register" element={<Register />} />
