@@ -22,8 +22,8 @@ function MyReservations() {
   const backgroundColors = ['lime-green', 'golden-yellow', 'turquoise-blue', 'charcoal-gray'];
 
   return (
-    <section id="my-reservations" className="flex items-center justify-center">
-      <div className="w-[100%] md:px-40 md:py-20">
+    <section id="my-reservations" className="flex items-center justify-center lg:ml-[15%]">
+      <div className="w-[100%] md:px-40 lg:px-80 md:py-20">
         {reservations.map((reservation, index) => {
           if (index % 2 === 0) {
             flexDirection = 'flex-row-reverse';
