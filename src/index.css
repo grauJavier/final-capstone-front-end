@@ -1,11 +1,10 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
 
 * {
   --primary-font: 'Poppins', sans-serif;
@@ -105,11 +104,13 @@
   background-image: url('./assets/images/background-my-reservations.jpeg');
   background-position: center;
   background-size: cover;
-  min-height: 100lvh;
+  min-height: 100lvh; /* stylelint-disable-line */
   height: 100%;
 }
 
-#citySelect, #placeSelect, #datePicker {
+#citySelect,
+#placeSelect,
+#datePicker {
   appearance: none;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -117,14 +118,51 @@
   background-size: 1em;
 }
 
-#citySelect option, #placeSelect option {
-  @layer m-24;
+#citySelect option,
+#placeSelect option {
+  @layer m-24; /* stylelint-disable-line */
+
   background-color: #fff;
   color: var(--charcoal-gray);
 }
 
-#citySelect:focus, #placeSelect:focus, #datePicker:focus {
+#citySelect:focus,
+#placeSelect:focus,
+#datePicker:focus {
   border-color: var(--platinum);
+}
+
+/* Date-Picker Styles */
+.react-datepicker {
+  border-radius: 24px;
+  border: 2px solid #fff;
+  font-family: var(--primary-font);
+}
+
+.react-datepicker__header {
+  border-top-right-radius: 24px !important;
+  border-top-left-radius: 24px;
+  background-color: var(--lime-green);
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: #fff;
+  font-weight: normal;
+}
+
+.react-datepicker__navigation--next,
+.react-datepicker__navigation--previous {
+  margin-top: 7px;
+}
+
+.react-datepicker__navigation-icon::before,
+.react-datepicker__navigation-icon::after {
+  border-color: #fff !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--lime-green);
 }
 
 @media only screen and (min-width: 1024px) {
@@ -138,4 +176,3 @@
     right: calc(50.5% - 8.5vw);
   }
 }
-
