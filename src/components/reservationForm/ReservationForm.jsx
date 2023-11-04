@@ -56,48 +56,57 @@ function ReservationForm() {
   today.setHours(0, 0, 0, 0);
 
   return (
-    <form className="flex flex-col gap-3 m-3">
-      <div>
-        <label htmlFor="citySelect">Select a City:</label>
-        <select
-          id="citySelect"
-          value={selectedCity}
-          onChange={(e) => setSelectedCity(e.target.value)}
-          required >
-          <option value="">Select a City</option>
-          {cities.map((city) => (
-            <option key={city.id} value={city.id}>
-              {city.name}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="placeSelect">Select a Place:</label>
-        <select
-          id="placeSelect"
-          value={selectedPlace}
-          onChange={(e) => setSelectedPlace(e.target.value)}
-          required >
-          <option value="">Select a Place</option>
-          {places.map((place) => (
-            <option key={place.id} value={place.id}>
-              {place.name}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="datePicker">Select a Date:</label>
-        <DatePicker
-          id="datePicker"
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          minDate={today}
-          required />
-      </div>
-      <button onClick={handleSubmit}>Submit</button>
-    </form>
+    <section className="lg:ml-[15%] bg-login-img bg-cover min-h-screen flex flex-col items-center justify-center">
+      <h2 className="secondary-font text-4xl text-zinc-50 mb-12">Add a new reservation</h2>
+      <form className="flex flex-col gap-5 m-3 mt-0 forms-layout">
+        <div>
+          <select
+            id="citySelect"
+            value={selectedCity}
+            onChange={(e) => setSelectedCity(e.target.value)}
+            placeholder='Select a City'
+            className='!w-80 forms-inputs'
+            required
+          >
+            <option value="">Select a City</option>
+            {cities.map((city) => (
+              <option key={city.id} value={city.id}>
+                {city.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <select
+            id="placeSelect"
+            value={selectedPlace}
+            onChange={(e) => setSelectedPlace(e.target.value)}
+            placeholder='Select a Place'
+            className='!w-80 forms-inputs'
+            required
+          >
+            <option value="">Select a Place</option>
+            {places.map((place) => (
+              <option key={place.id} value={place.id}>
+                {place.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <DatePicker
+            id="datePicker"
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            minDate={today}
+            placeholderText='Select a Date'
+            className='!w-80 forms-inputs'
+            required
+          />
+        </div>
+        <button className="forms-submit" onClick={handleSubmit}>Submit</button>
+      </form>
+    </section>
   );
 }
 
