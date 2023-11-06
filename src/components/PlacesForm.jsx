@@ -6,7 +6,12 @@ import fetchCities from '../redux/reservationForm/actions/fetchCities';
 import { sendPlaces } from '../redux/places/placesSlice';
 
 const PlacesForm = () => {
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm();
   const dispatch = useDispatch();
   const cities = useSelector((state) => state.reservation.cities);
   const user = useSelector((state) => state.user.currentUser);
