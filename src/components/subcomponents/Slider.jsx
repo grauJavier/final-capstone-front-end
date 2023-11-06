@@ -2,10 +2,16 @@ import { useEffect } from "react";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux"
 import { getPlaces } from "../../redux/places/placesSlice"
+import { useNavigate } from "react-router-dom";
 
 const Slideshow = () => {
   const dispatch = useDispatch();
   const places = useSelector((state) => state.placesSlice.places);
+  const navigate = useNavigate();
+
+  const goToPlaceDetails = (id) => {
+    navigate(`/places/${id}/details`);
+  };
 
   useEffect(() => {
     dispatch(getPlaces())
@@ -50,7 +56,7 @@ const Slideshow = () => {
     <div>
       <Slider className="mx-12 relative" {...settings}>
         {places.map((place, index) => (
-          <div className="max-h-full" key={index}>
+          <div className="max-h-full cursor-pointer" key={index} onClick={() => goToPlaceDetails(place.id)}>
             <div className="bg-cover bg-center aspect-square rounded mx-1" style={{backgroundImage:`url(${place.image_url})`}}>
               <div className="w-full h-full bg-limerick/50 rounded flex flex-col justify-center text-white font-poppins">
                 <h2 className="uppercase font-bold text-xl lg:text-2xl">{place.name}</h2>

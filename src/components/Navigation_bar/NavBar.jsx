@@ -3,6 +3,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Logout from '../Register_Login_forms/Logout';
+import lb from '../../assets/logo-black.png';
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
@@ -63,7 +64,7 @@ const NavBar = () => {
       { (show || windowWidth >= 1024) && 
       <div className="min-h-screen w-3/4 max-w-[320px] flex flex-col primary-font fixed z-50 bg-white shadow-menu animate-show-menu lg:shadow-none lg:border-r-2 lg:border-login-green lg:max-w-[15vw]" id="menu-container">
         <AiFillCloseCircle className="ml-[15px] mt-[15px] text-[1.5rem] lg:hidden" onClick={showHideNav}/>
-        <img src="src/assets/logo-black.png" className="w-[100px] ml-auto mr-auto lg:mt-auto" />
+        <img src={lb} className="w-[100px] ml-auto mr-auto lg:mt-auto" />
         <nav className="m-auto ml-[15px] mr-0">
           <ul className="flex flex-col content-center min-h-[70vh] justify-evenly">
             {elements.map((element, index) => 
