@@ -84,13 +84,20 @@ const PlacesForm = () => {
           </select>
           {errors.details?.place_type?.message && <p className='text-white italic'>*{errors.details.place_type.message}</p>}
 
-          <input
-            {...register("details.property_type", {
-              required: { value: true, message: 'Introduce a property type' }
+          <select
+            {...register('details.property_type', {
+              required: { value: true, message: 'Introduce a property type' },
             })}
             placeholder="Property type"
             className="w-80 forms-inputs max-sm:w-52"
-          />
+            id="citySelect"
+          >
+            <option value="">Property type</option>
+            <option value="House">House</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Guest House">Guest House</option>
+            <option value="Hotel">Hotel</option>
+          </select>
           {errors.details?.property_type?.message && <p className='text-white italic'>*{errors.details.property_type.message}</p>}
 
           <input
