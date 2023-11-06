@@ -152,19 +152,24 @@ const PlacesForm = () => {
             <label htmlFor="number-of-bathrooms" className="text-white mr-2">
               Number of bathrooms
             </label>
-          <input
-            {...register("details.bathrooms", {
-              required: { value: true, message: 'Introduce the number of bathrooms' },
-              validate: {
-                isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
-              }
-            })}
-            placeholder="Number of bathrooms"
-            type="number"
-            className="w-80 forms-inputs max-sm:w-52"
-            id="citySelect"
-          />
-          {errors.details?.bathrooms?.message && <p className='text-white italic'>*{errors.details.bathrooms.message}</p>}
+            <input
+              {...register('details.bathrooms', {
+                required: { value: true, message: 'Introduce the number of bathrooms' },
+                validate: {
+                  isInteger: (value) =>
+                    Number.isInteger(Number(value)) || 'Please enter an integer',
+                  },
+                min: { value: 1, message: 'Minimum value is 1' },
+              })}
+              name="number-of-bathrooms"
+              type="number"
+              min="1"
+              defaultValue={1}
+              className="forms-inputs w-20"
+            />
+            {errors.details?.bathrooms?.message && (
+              <p className="text-white italic">*{errors.details.bathrooms.message}</p>
+            )}
           </div>
 
           <input
