@@ -123,7 +123,11 @@ const PlacesForm = () => {
               <p className="text-white italic">*{errors.details.bedrooms.message}</p>
             )}
           </div>
-          
+
+          <div className="flex flex-row items-center w-80 max-sm:w-52 justify-between">
+          <label htmlFor="number-of-beds" className="text-white mr-2">
+            Number of beds
+          </label>
           <input
             {...register("details.beds", {
               required: { value: true, message: 'Introduce the number of beds' },
@@ -136,6 +140,7 @@ const PlacesForm = () => {
             className="w-80 forms-inputs max-sm:w-52"
           />
           {errors.details?.beds?.message && <p className='text-white italic'>*{errors.details.beds.message}</p>}
+          </div>
 
           <input
             {...register("details.bathrooms", {
