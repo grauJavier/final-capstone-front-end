@@ -34,9 +34,13 @@ const PlacesForm = () => {
         >
           <input
             {...register('place.name', {
-              required: { value: true, message: 'Name is required' }
-            })} placeholder='Name' type="text" className="w-80 forms-inputs max-sm:w-52" />
-            {errors.place?.name?.message && <p className='text-white italic'>*{errors.place.name.message}</p>}
+              required: { value: true, message: 'Name is required' },
+            })}
+            placeholder="Name"
+            type="text"
+            className="w-80 forms-inputs max-sm:w-52"
+          />
+          {errors.place?.name?.message && <p className='text-white italic'>*{errors.place.name.message}</p>}
 
           <select
             {...register('place.city_id', {
