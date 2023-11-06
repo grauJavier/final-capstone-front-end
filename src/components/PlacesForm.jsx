@@ -99,20 +99,31 @@ const PlacesForm = () => {
             <option value="Hotel">Hotel</option>
           </select>
           {errors.details?.property_type?.message && <p className='text-white italic'>*{errors.details.property_type.message}</p>}
-
-          <input
-            {...register("details.bedrooms", {
-              required: { value: true, message:'Introduce the amount of bedrooms' },
-              validate: {
-                isInteger: value => Number.isInteger(Number(value)) || 'Please enter an integer'
-              }
-            })}
-            placeholder="Number of Bedrooms"
-            type="number"
-            className="w-80 forms-inputs max-sm:w-52"
-          />
-          {errors.details?.bedrooms?.message && <p className='text-white italic'>*{errors.details.bedrooms.message}</p>}
-
+          
+          <div className="flex flex-row items-center w-80 max-sm:w-52 justify-between">
+            <label htmlFor="number-of-bedrooms" className="text-white mr-2">
+              Number of bedrooms
+            </label>
+            <input
+              {...register('details.bedrooms', {
+                required: { value: true, message: 'Introduce the amount of bedrooms' },
+                validate: {
+                  isInteger: (value) =>
+                    Number.isInteger(Number(value)) || 'Please enter an integer',
+                  },
+                min: { value: 1, message: 'Minimum value is 1' },
+              })}
+              name="number-of-bedrooms"
+              type="number"
+              min="1"
+              defaultValue={1}
+              className="forms-inputs w-20"
+            />
+            {errors.details?.bedrooms?.message && (
+              <p className="text-white italic">*{errors.details.bedrooms.message}</p>
+            )}
+          </div>
+          
           <input
             {...register("details.beds", {
               required: { value: true, message: 'Introduce the number of beds' },
