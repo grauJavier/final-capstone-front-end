@@ -44,7 +44,7 @@ const PlacesForm = () => {
 
           <select
             {...register('place.city_id', {
-              required: { value: true, message: 'Select a location' }
+              required: { value: true, message: 'Select a location' },
             })}
             id="citySelect"
             placeholder="Select Location"
