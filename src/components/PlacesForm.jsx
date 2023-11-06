@@ -70,13 +70,18 @@ const PlacesForm = () => {
 
           <ImageUploader setValue={setValue} />
           <p>Aditional information</p>
-          <input
-            {...register("details.place_type", {
-              required: { value: true, message: 'Introduce a place type' }
+          <select
+            {...register('details.place_type', {
+              required: { value: true, message: 'Introduce a place type' },
             })}
             placeholder="Place type"
             className="w-80 forms-inputs max-sm:w-52"
-          />
+            id="citySelect"
+          >
+            <option value="">Place type</option>
+            <option value="Room">Room</option>
+            <option value="Entire Home">Entire Home</option>
+          </select>
           {errors.details?.place_type?.message && <p className='text-white italic'>*{errors.details.place_type.message}</p>}
 
           <input
