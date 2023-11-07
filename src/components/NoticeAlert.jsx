@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { setNotice, setError } from "../redux/NoticeAlert/NoticeAlertSlice"; 
 
 const NoticeAlert = () => {
-  const notice = useSelector((state) => state.user.notice);
-  const error = useSelector((state) => state.user.error);
+  const notice = useSelector((state) => state.noticeAlert.notice);
+  const error = useSelector((state) => state.noticeAlert.error);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const alertElement = document.querySelector('.alert');
@@ -14,7 +16,7 @@ const NoticeAlert = () => {
         alertElement.classList.remove('animate-show-message');
         alertElement.classList.add('animate-hide-message');
         setTimeout(() => {
-          alertElement.style.display = 'none';
+          dispatch(setError(null));
         }, 500);
       }, 5000)
     }
@@ -24,11 +26,11 @@ const NoticeAlert = () => {
         noticeElement.classList.remove('animate-show-message');
         noticeElement.classList.add('animate-hide-message');
         setTimeout(() => {
-          noticeElement.style.display = 'none';
+          dispatch(setNotice(null));
         }, 500);
       }, 5000)
     }
-  }, [notice, error]);
+  }, [notice, error, dispatch]);
 
   return (
     <>

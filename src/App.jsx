@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Places from './components/places/Places'
 import NotFound from './components/NotFound'
@@ -24,7 +24,8 @@ function App() {
       { user && <NavBar />}
       <Routes>
         <Route element={<ProtectedRoute user={user} />}>
-          <Route index path="/" element={<Places />} />
+          <Route index path="/" element={<Navigate to="/places" />} />
+          <Route path="/places" element={<Places />} />
           <Route path="/places/:id/details" element={<PlacesDetails />} />
           <Route path="/new-place" element={<PlacesForm />} />
           <Route path="/reservation" element={<ReservationForm />} />

@@ -6,6 +6,7 @@ import { createTransform } from 'redux-persist';
 import placesSlice from "./places/placesSlice";
 import reservationReducer from './reservationForm/reservationSlice.js';
 import myReservationsReducer from './myReservations/myReservationsSlice.js';
+import noticeAlertReducer from './NoticeAlert/NoticeAlertSlice.js';
 
 // Create a personalized transform.
 const userTransform = createTransform(
@@ -33,6 +34,7 @@ const persistConfig = {
 };
 
 const reducer = combineReducers({
+  noticeAlert: noticeAlertReducer,
   user: userReducer,
   placesSlice,
   reservation: reservationReducer,

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import { placesURL } from "../../utils/constant";
 import axios from "axios";
+import { setNotice, setError, clearNoticeAndError } from "../NoticeAlert/NoticeAlertSlice";
 
 const GET_PLACES = "placesStore/places/GET_PLACES";
 const GET_DETAILS = "placesStore/places/GET_DETAILS"
@@ -16,13 +17,18 @@ export const getDetails = createAsyncThunk(GET_DETAILS, id => {
     .then((response) => response.data);
 });
 
-export const sendPlaces = createAsyncThunk('placesStore/places/sendPlaces', async (data) => {
-  try {
-    return axios.post(`http://127.0.0.1:3000/users/${data.user_id}/places`, data.body)
-      .then(response => response.data);
-  } catch (error) {
-    console.error(error);
-  }
+export const sendPlaces = createAsyncThunk('placesStore/places/sendPlaces', async (data, { dispatch }) => {
+    return await axios.post(`http://127.0.0.1:3000/users/${data.user_id}/places`, data.body)
+      .then(response => {
+        dispatch(clearNoticeAndError());
+        dispatch(setNotice('Place created successfully!'));
+        return response.data;
+      })
+      .catch(error => {
+        dispatch(clearNoticeAndError());
+        dispatch(setError('Could not create a Place'));
+        return error;
+      })
 })
 
 const initialState = {

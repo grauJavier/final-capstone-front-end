@@ -7,8 +7,6 @@ const userSlice = createSlice({
   name: 'user',
   initialState: {
     data: null,
-    error: null,
-    notice: null,
     currentUser: null,
     token: null
   },
@@ -17,32 +15,15 @@ const userSlice = createSlice({
     builder
       .addCase(sendRegistration.fulfilled, (state, action) => {
         state.data = action.payload.data;
-        state.error = null;
-        state.notice = action.payload.status.message;
-      })
-      .addCase(sendRegistration.rejected, (state, action) => {
-        state.error = action.payload.status.message;
-        state.notice = null;
       })
       .addCase(sendLogin.fulfilled, (state, action) => {
+        if (!action.payload.body) return;
         state.currentUser = action.payload.body.status.data.user;
-        state.error = null;
-        state.notice = action.payload.body.status.message;
         state.token = action.payload.authorization;
       })
-      .addCase(sendLogin.rejected, (state, action) => {
-        state.error = action.payload;
-        state.notice = null;
-      })
-      .addCase(sendLogout.fulfilled, (state, action) => {
+      .addCase(sendLogout.fulfilled, (state) => {
         state.currentUser = null;
         state.token = null;
-        state.notice = action.payload.message;
-        state.error = null;
-      })
-      .addCase(sendLogout.rejected, (state, action) => {
-        state.notice = null;
-        state.error = action.payload.message;
       });
   }
 });
