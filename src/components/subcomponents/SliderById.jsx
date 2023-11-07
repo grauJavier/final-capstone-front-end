@@ -15,6 +15,10 @@ const Slideshowid = () => {
   const goToPlaceDetails = (id) => {
     navigate(`/places/${id}/details`);
   };
+  
+  const handleDelete = (userId, placeId) => {
+    dispatch(deletePlace({ user_id: userId, place_id: placeId }));
+  };
 
   useEffect(() => {
     dispatch(getPlacesById());
