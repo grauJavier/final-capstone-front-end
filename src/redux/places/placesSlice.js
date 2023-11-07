@@ -63,6 +63,13 @@ const placesSlice = createReducer(initialState, builder => {
     .addCase(sendPlaces.fulfilled, (state, action) => {
       state.places.push(action.payload);
     })
+    .addCase(deletePlace.fulfilled, (state, { payload }) => {
+      console.log(payload);
+      const placeId = payload;
+      state.places = state.places.filter(
+        (place) => place.id !== placeId
+      );
+    });
 })
 
 export default placesSlice;
