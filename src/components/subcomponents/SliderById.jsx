@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import Slider from 'react-slick';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPlaces } from '../../redux/places/placesSlice';
+import { getPlacesById } from '../../redux/places/placesSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Slideshowid = () => {
   const dispatch = useDispatch();
-  const places = useSelector((state) => state.placesSlice.places);
+  const placesById = useSelector((state) => state.placesSlice.placesById);
   const navigate = useNavigate();
 
   const goToPlaceDetails = (id) => {
@@ -14,7 +14,7 @@ const Slideshowid = () => {
   };
 
   useEffect(() => {
-    dispatch(getPlaces());
+    dispatch(getPlacesById());
   }, [dispatch]);
 
   var settings = {
@@ -57,7 +57,7 @@ const Slideshowid = () => {
   return (
     <div>
       <Slider className="md:mx-24 mx-16 h-full" {...settings}>
-        {places.map((place, index) => (
+        {placesById.map((place, index) => (
           <div
             className="cursor-pointer flex flex-col justify-center"
             key={index}
