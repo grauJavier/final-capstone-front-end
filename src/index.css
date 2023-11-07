@@ -1,8 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
 
@@ -47,7 +47,7 @@
 }
 
 .forms-inputs {
-  @apply bg-form-green border-2 border-form-border-white rounded-full text-form-border-white placeholder-form-border-white py-2 px-5 outline-0 w-11/12 max-w-screen-sm focus:border-orange-500;
+  @apply bg-form-green border-2 border-form-border-white rounded-full text-form-border-white placeholder-form-border-white py-2 px-5 outline-0 w-11/12 max-w-screen-sm focus:border-yellow-300;
 }
 
 .forms-submit {
@@ -64,11 +64,6 @@
 
 .logo-image {
   @apply w-[150px] m-auto drop-shadow-logo;
-}
-
-.slick-prev::before,
-.slick-next::before {
-  color: #98bf11;
 }
 
 .dialog-triangle::after {
@@ -126,12 +121,6 @@
   color: var(--charcoal-gray);
 }
 
-#citySelect:focus,
-#placeSelect:focus,
-#datePicker:focus {
-  border-color: var(--platinum);
-}
-
 /* Date-Picker Styles */
 .react-datepicker {
   border-radius: 24px;
@@ -165,6 +154,36 @@
   background-color: var(--lime-green);
 }
 
+/* Slider Styles */
+
+.slick-list {
+  height: max-content !important;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: var(--lime-green);
+  background-position-x: 3px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  border-radius: 50%;
+}
+
+.slick-arrow::before {
+  font-size: 3rem !important;
+}
+
+.slick-prev,
+.slick-next {
+  height: 0;
+  z-index: 2;
+}
+
+.slick-prev {
+  left: -55px;
+}
+
 @media only screen and (min-width: 1024px) {
   .dialog-triangle.bg-lime-green::after,
   .dialog-triangle.bg-turquoise-blue::after {
@@ -174,5 +193,11 @@
   .dialog-triangle.bg-golden-yellow::after,
   .dialog-triangle.bg-charcoal-gray::after {
     right: calc(50.5% - 8.5vw);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .slick-arrow::before {
+    font-size: 2rem !important;
   }
 }
