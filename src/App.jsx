@@ -13,6 +13,7 @@ import './App.css'
 import ReservationForm from './components/reservationForm/ReservationForm'
 import MyReservations from './components/myReservations/MyReservations.jsx'
 import PlacesDetails from './components/place_details/PlaceDetails.jsx'
+import MyPlaces from './components/myPlaces/MyPlaces.jsx'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/new-place" element={<PlacesForm />} />
           <Route path="/reservation" element={<ReservationForm />} />
           <Route path="/my-reservations" element={<MyReservations />} />
+          <Route path="/my-places" element={<MyPlaces />} />
         </Route>
         <Route element={<PublicRoute user={user} />}>
           <Route path="/register" element={<Register />} />
