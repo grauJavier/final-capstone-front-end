@@ -49,6 +49,7 @@ export const deletePlace = createAsyncThunk(DELETE_PLACE, data => {
 
 const initialState = {
   places: [],
+  placesById: [],
   details: null,
 };
 
@@ -64,6 +65,12 @@ const placesSlice = createReducer(initialState, builder => {
       return{
         ...state,
         details: payload,
+      }
+    })
+    .addCase(getPlacesById.fulfilled, (state, { payload }) => {
+      return{
+        ...state,
+        placesById: [...payload],
       }
     })
     .addCase(sendPlaces.fulfilled, (state, action) => {
