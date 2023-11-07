@@ -29,7 +29,7 @@ function MyReservations() {
       <div className="w-[100%] md:px-40 xl:px-80 md:py-20">
         {reservations.length === 0 ? (
           <div className="text-center">
-            You haven't registered any visit yet. <br /> Be brave. Make one.
+            You haven&apos;t registered any visit yet. <br /> Be brave. Make one.
           </div>
         ) : (
           reservations.map((reservation, index) => {
