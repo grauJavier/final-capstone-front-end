@@ -9,6 +9,7 @@ import { deletePlace } from "../../redux/places/placesSlice";
 const Slideshowid = () => {
   const dispatch = useDispatch();
   const placesById = useSelector((state) => state.placesSlice.placesById);
+  const userId = useSelector(selectUserId);
   const navigate = useNavigate();
 
   const goToPlaceDetails = (id) => {
