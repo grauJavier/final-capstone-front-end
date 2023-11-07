@@ -2,9 +2,11 @@ import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import { placesURL } from "../../utils/constant";
 import axios from "axios";
 import { setNotice, setError, clearNoticeAndError } from "../NoticeAlert/NoticeAlertSlice";
+import { selectUserId } from '../../redux/user/userSlice.js';
 
 const GET_PLACES = "placesStore/places/GET_PLACES";
-const GET_DETAILS = "placesStore/places/GET_DETAILS"
+const GET_DETAILS = "placesStore/places/GET_DETAILS";
+
 
 export const getPlaces = createAsyncThunk(GET_PLACES, () => {
   return axios.get(placesURL)
