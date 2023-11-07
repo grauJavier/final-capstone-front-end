@@ -13,6 +13,11 @@ export const getPlaces = createAsyncThunk(GET_PLACES, () => {
     .then(response => response.data)
 });
 
+export const getPlacesById = createAsyncThunk(GET_PLACES_BY_ID, id => {
+  return axios.get(placesURL, { params: { user_id: id } })
+    .then(response => response.data)
+});
+
 export const getDetails = createAsyncThunk(GET_DETAILS, id => {
   const detailsURL = `http://127.0.0.1:3000/places/${id}/details`;
   return axios.get(detailsURL)
