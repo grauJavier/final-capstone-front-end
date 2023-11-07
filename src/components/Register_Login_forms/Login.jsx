@@ -19,15 +19,15 @@ const Login = () => {
   };
 
   return (
-    <div className='bg-login-img bg-cover min-h-screen flex flex-col items-center'>
+    <div className='bg-lime-img bg-cover bg-center min-h-screen flex flex-col items-center'>
       <img src="src/assets/logo-full.png" className="logo-image" />
-      <h2 className="secondary-font text-2xl text-zinc-50">LOGIN</h2>
-      <form className="forms-layout" onSubmit={handleSubmit(onSubmit)}>
+      <h2 className="secondary-font text-3xl font-bold text-zinc-50">LOGIN</h2>
+      <form className="forms-layout mt-12" onSubmit={handleSubmit(onSubmit)}>
         <EmailInput register={register} errors={errors} />
         <PasswordInput register={register} errors={errors} />
         <input type="submit" className='forms-submit' value="Sign in" />
       </form>
-      <p className="text-center primary-font mt-auto">Don&apos;t have an account? <a className="underline text-white cursor-pointer" onClick={handleClick}>Sign up</a></p>
+      <p className="text-center text-white primary-font mt-auto mb-4">Don&apos;t have an account? <a className="underline text-white cursor-pointer text-yellow-300" onClick={handleClick}>Sign up</a></p>
     </div>
   );
 };
