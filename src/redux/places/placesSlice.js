@@ -32,6 +32,15 @@ export const sendPlaces = createAsyncThunk('placesStore/places/sendPlaces', asyn
       })
 })
 
+export const deletePlace = createAsyncThunk(DELETE_PLACE, data => {
+  const deleteURL = `http://127.0.0.1:3000/users/${data.user_id}/places/${data.place_id}`;
+  return axios.delete(deleteURL)
+  .then(() => data.place_id)
+  .catch(error => {
+    throw error;
+  });
+});
+
 const initialState = {
   places: [],
   details: null,
