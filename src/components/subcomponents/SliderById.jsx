@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPlacesById } from '../../redux/places/placesSlice';
 import { useNavigate } from 'react-router-dom';
+import { selectUserId } from '../../redux/user/userSlice.js';
 
 const Slideshowid = () => {
   const dispatch = useDispatch();
@@ -84,6 +85,7 @@ const Slideshowid = () => {
           </div>
         ))}
       </Slider>
+
     </div>
   );
 };
