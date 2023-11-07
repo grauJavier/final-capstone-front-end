@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPlacesById } from '../../redux/places/placesSlice';
 import { useNavigate } from 'react-router-dom';
 import { selectUserId } from '../../redux/user/userSlice.js';
+import { deletePlace } from "../../redux/places/placesSlice";
 
 const Slideshowid = () => {
   const dispatch = useDispatch();
