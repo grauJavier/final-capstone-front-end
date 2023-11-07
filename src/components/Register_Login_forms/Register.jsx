@@ -28,7 +28,7 @@ const Register = () => {
   };
 
   return (
-    <div className='bg-login-img bg-cover min-h-screen flex flex-col items-center'>
+    <div className='bg-lime-img bg-cover min-h-screen flex flex-col items-center'>
       <img src="src/assets/logo-full.png" className="logo-image" />
       <h2 className="secondary-font text-2xl text-zinc-50">REGISTER</h2>
       <form className="forms-layout" onSubmit={handleSubmit(onSubmit)}>

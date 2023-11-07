@@ -20,6 +20,19 @@ function ReservationForm() {
   const userId = useSelector(selectUserId);
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const selectedCityFromQuery = searchParams.get('city_id');
+    const selectedPlaceFromQuery = searchParams.get('place_id');
+
+    if (selectedCityFromQuery) {
+      setSelectedCity(selectedCityFromQuery);
+    }
+    if (selectedPlaceFromQuery) {
+      setSelectedPlace(selectedPlaceFromQuery);
+    }
+  }, [location.search]);
+
+  useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchCities());
     }
@@ -35,7 +48,6 @@ function ReservationForm() {
   }, [selectedCity, dispatch, cities]);
 
   const handleSubmit = () => {
-    // Send the data to the server
     const data = {
       user_id: userId,
       place_id: selectedPlace,
@@ -56,9 +68,9 @@ function ReservationForm() {
   today.setHours(0, 0, 0, 0);
 
   return (
-    <section className="lg:ml-[15%] bg-login-img bg-cover min-h-screen flex flex-col items-center justify-center">
-      <div className="container flex flex-col items-center justify-center p-24 pb-40">
-        <h2 className="secondary-font text-4xl text-zinc-50 mb-12 text-center">
+    <section className="lg:ml-[15%] bg-golden-img bg-cover min-h-screen flex flex-col items-center justify-center p-4">
+      <div className="container flex flex-col items-center justify-center sm:p-24 sm:pb-40">
+        <h2 className="secondary-font text-4xl font-bold text-zinc-50 mb-12 text-center">
           Add a new reservation
         </h2>
         <form className="flex flex-col gap-5 m-3 mt-0 forms-layout">
@@ -68,7 +80,7 @@ function ReservationForm() {
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
               placeholder="Select a City"
-              className="w-80 forms-inputs max-sm:w-52"
+              className="forms-inputs bg-golden-yellow w-64 md:w-80"
               required
             >
               <option value="">Select a City</option>
@@ -85,7 +97,7 @@ function ReservationForm() {
               value={selectedPlace}
               onChange={(e) => setSelectedPlace(e.target.value)}
               placeholder="Select a Place"
-              className="w-80 forms-inputs max-sm:w-52"
+              className="forms-inputs bg-golden-yellow w-64 md:w-80"
               required
             >
               <option value="">Select a Place</option>
@@ -103,12 +115,12 @@ function ReservationForm() {
               onChange={(date) => setSelectedDate(date)}
               minDate={today}
               placeholderText="Select a Date"
-              className="w-80 forms-inputs max-sm:w-52"
+              className="forms-inputs bg-golden-yellow w-64 md:w-80"
               autoComplete="off"
               required
             />
           </div>
-          <button className="forms-submit min-w-fit" onClick={handleSubmit}>
+          <button className="forms-submit text-golden-yellow hover:bg-golden-yellow hover:text-white min-w-fit" onClick={handleSubmit}>
             Submit
           </button>
         </form>
