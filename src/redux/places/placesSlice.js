@@ -6,6 +6,7 @@ import { setNotice, setError, clearNoticeAndError } from "../NoticeAlert/NoticeA
 const GET_PLACES = "placesStore/places/GET_PLACES";
 const GET_DETAILS = "placesStore/places/GET_DETAILS";
 const DELETE_PLACE = "placesStore/places/DELETE_PLACE";
+const GET_PLACES_BY_ID = "placesStore/places/GET_PLACES_BY_ID";
 
 export const getPlaces = createAsyncThunk(GET_PLACES, () => {
   return axios.get(placesURL)
