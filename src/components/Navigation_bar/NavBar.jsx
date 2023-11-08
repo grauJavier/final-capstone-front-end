@@ -56,13 +56,7 @@ const NavBar = () => {
     }
   };
 
-  const elements = [
-    ['Places', '/'],
-    ['My Reservations', '/my-reservations'],
-    ['New Reservation', '/reservation'],
-    ['New Place', '/new-place'],
-    ['Remove Place', '/remove-place'],
-  ];
+  const elements = [['Places', '/places'], ['My Reservations', '/my-reservations'], ['New Reservation', '/reservation'], ['New Place', '/new-place'], ['Remove Place', '/my-places']];
 
   return (
     <>

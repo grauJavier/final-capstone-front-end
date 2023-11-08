@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import deleteReservation from './actions/deleteReservation';
 import fetchMyReservations from './actions/fetchMyReservations';
+import createReservation from './actions/createReservation';
 
 const initialState = {
   reservations: [],
@@ -26,12 +27,16 @@ const myReservationsSlice = createSlice({
 
     builder.addCase(fetchMyReservations.fulfilled, (state, action) => {
       state.status = 'succeeded';
-      state.reservations = action.payload;
+      state.reservations = [...action.payload];
     });
 
     builder.addCase(fetchMyReservations.rejected, (state, action) => {
       state.status = 'failed';
       state.error = action.error.message;
+    });
+
+    builder.addCase(createReservation.fulfilled, (state, action) => {
+      state.reservations = [...state.reservations, action.payload];
     });
   },
 });

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const PublicRoute = ({
   user,
-  redirectPath = "/"
+  redirectPath = "/places"
 }) => {
   if (user) {
     return <Navigate to={redirectPath} replace />;
