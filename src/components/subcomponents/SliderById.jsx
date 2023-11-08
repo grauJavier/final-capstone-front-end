@@ -18,7 +18,6 @@ const Slideshowid = () => {
 
   const handleDelete = (userId, placeId) => {
     dispatch(deletePlace({ user_id: userId, place_id: placeId }));
-    dispatch(getPlacesById(userId));
   };
 
   useEffect(() => {
