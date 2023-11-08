@@ -22,7 +22,7 @@ const Slideshowid = () => {
 
   useEffect(() => {
     dispatch(getPlacesById());
-  }, [dispatch]);
+  }, [dispatch, placesById]);
 
   var settings = {
     dots: false,
