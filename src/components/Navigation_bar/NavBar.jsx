@@ -56,7 +56,13 @@ const NavBar = () => {
     }
   };
 
-  const elements = [['Places', '/places'], ['My Reservations', '/my-reservations'], ['New Reservation', '/reservation'], ['New Place', '/new-place'], ['Remove Place', '/my-places']];
+  const elements = [
+    ['Places', '/places'],
+    ['New Reservation', '/reservation'],
+    ['My Reservations', '/my-reservations'],
+    ['My Places', '/my-places'],
+    ['New Place', '/new-place'],
+  ];
 
   return (
     <>
@@ -68,14 +74,14 @@ const NavBar = () => {
       )}
       {(show || windowWidth >= 1024) && (
         <div
-          className="min-h-screen w-3/4 max-w-[320px] flex flex-col primary-font fixed z-50 bg-white drop-shadow-xl animate-show-menu lg:shadow-none lg:border-r-2 lg:border-stone-100 lg:max-w-[15vw]"
+          className="min-h-screen w-3/4 max-w-[320px] flex flex-col primary-font fixed z-50 bg-white drop-shadow-xl animate-show-menu lg:shadow-none lg:border-r-2 lg:border-stone-100 lg:max-w-[15vw] lg:animate-none"
           id="menu-container"
         >
           <AiFillCloseCircle
             className="ml-[15px] mt-[15px] text-[1.5rem] lg:hidden"
             onClick={showHideNav}
           />
-          <img src={lb} className="w-[100px] ml-auto mr-auto lg:mt-auto" />
+          <img src={lb} className="w-[65%] mt-12 mx-auto" />
           <nav className="m-auto ml-[15px] mr-0">
             <ul className="flex flex-col content-center min-h-[70vh] justify-evenly">
               {elements.map((element, index) => (
