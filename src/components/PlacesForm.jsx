@@ -72,7 +72,7 @@ const PlacesForm = () => {
               })}
               placeholder="Add a description"
               className="w-64 md:w-80 forms-inputs bg-turquoise-blue rounded-lg h-48"
-              maxlength="255"
+              maxLength="255"
             />
             {errors.place?.description?.message && (
               <p className="text-white italic">*{errors.place.description.message}</p>
