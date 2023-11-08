@@ -128,7 +128,7 @@ const PlaceForm = () => {
                   },
                   min: { value: 1, message: 'Minimum value is 1' },
                 })}
-                name="number-of-bedrooms"
+                id="number-of-bedrooms"
                 type="number"
                 min="1"
                 defaultValue={1}
@@ -151,7 +151,7 @@ const PlaceForm = () => {
                   },
                   min: { value: 1, message: 'Minimum value is 1' },
                 })}
-                name="number-of-beds"
+                id="number-of-beds"
                 type="number"
                 min="1"
                 defaultValue={1}
@@ -174,7 +174,7 @@ const PlaceForm = () => {
                   },
                   min: { value: 1, message: 'Minimum value is 1' },
                 })}
-                name="number-of-bathrooms"
+                id="number-of-bathrooms"
                 type="number"
                 min="1"
                 defaultValue={1}
@@ -197,7 +197,7 @@ const PlaceForm = () => {
                   },
                   min: 1,
                 })}
-                name="price"
+                id="price"
                 type="number"
                 defaultValue={0}
                 min="0"
