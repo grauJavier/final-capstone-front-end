@@ -1,11 +1,11 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import ImageUploader from './UploadFile';
-import fetchCities from '../redux/reservationForm/actions/fetchCities';
-import { sendPlaces } from '../redux/places/placesSlice';
+import ImageUploader from '../utils/UploadFile';
+import fetchCities from '../../redux/reservation_form/actions/fetchCities';
+import { sendPlaces } from '../../redux/places/placesSlice';
 
-const PlacesForm = () => {
+const PlaceForm = () => {
   const {
     register,
     handleSubmit,
@@ -219,4 +219,4 @@ const PlacesForm = () => {
   );
 };
 
-export default PlacesForm;
+export default PlaceForm;

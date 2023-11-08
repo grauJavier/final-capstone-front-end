@@ -2,7 +2,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Logout from '../Register_Login_forms/Logout';
+import Logout from '../register_login_forms/Logout';
 import lb from '../../assets/logo-black.png';
 
 const NavBar = () => {

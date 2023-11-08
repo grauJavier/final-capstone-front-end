@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import app from '../firebase';
+import app from '../../firebase';
 import PropTypes from 'prop-types';
 
 const ImageUploader = ({ setValue }) => {

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { setNotice, setError, clearNoticeAndError } from "../../NoticeAlert/NoticeAlertSlice";
+import { setNotice, setError, clearNoticeAndError } from "../../notice_alert/noticeAlertSlice";
 
 const createReservation = createAsyncThunk('myReservations/createReservation', async (data, { dispatch }) => {
   return await axios.post(`http://127.0.0.1:3000/users/${data.user_id}/reservations`, { place_id: data.place_id, schedule_date: data.schedule_date})

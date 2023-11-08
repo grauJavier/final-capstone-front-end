@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { setNotice, setError, clearNoticeAndError } from '../../NoticeAlert/NoticeAlertSlice';
+import { setNotice, setError, clearNoticeAndError } from '../../notice_alert/noticeAlertSlice';
 
 const API = 'http://127.0.0.1:3000/logout';
 

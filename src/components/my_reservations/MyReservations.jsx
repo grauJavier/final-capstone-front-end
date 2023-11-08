@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import deleteReservation from '../../redux/myReservations/actions/deleteReservation';
-import fetchMyReservations from '../../redux/myReservations/actions/fetchMyReservations';
+import deleteReservation from '../../redux/my_reservations/actions/deleteReservation';
+import fetchMyReservations from '../../redux/my_reservations/actions/fetchMyReservations';
 import { selectUserId } from '../../redux/user/userSlice.js';
 import { formatDistanceToNow } from 'date-fns';
 
