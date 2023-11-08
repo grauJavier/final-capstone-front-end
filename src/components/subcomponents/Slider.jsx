@@ -76,6 +76,9 @@ const Slideshow = () => {
             </div>
             <div className="mt-8 flex flex-col h-content justify-between">
               <h2 className="uppercase font-bold text-xl lg:text-2xl">{place.name}</h2>
+              <h3 className="primary-font tracking-tight font-normal text-stone-400">
+                {place.city.name}
+              </h3>
               <div>
                 <hr className="w-40 my-8 mx-auto border border-dashed" />
                 <p className="text-sm break-words mx-2 text-stone-400">{place.description}</p>
