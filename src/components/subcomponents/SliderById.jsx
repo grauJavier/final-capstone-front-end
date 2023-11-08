@@ -21,8 +21,8 @@ const Slideshowid = () => {
   };
 
   useEffect(() => {
-    dispatch(getPlacesById());
-  }, [dispatch, placesById]);
+    dispatch(getPlacesById(userId));
+  }, [dispatch]);
 
   var settings = {
     dots: false,
