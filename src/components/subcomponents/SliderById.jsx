@@ -15,7 +15,7 @@ const Slideshowid = () => {
   const goToPlaceDetails = (id) => {
     navigate(`/places/${id}/details`);
   };
-  
+
   const handleDelete = (userId, placeId) => {
     dispatch(deletePlace({ user_id: userId, place_id: placeId }));
   };
@@ -68,9 +68,9 @@ const Slideshowid = () => {
           <div
             className="cursor-pointer flex flex-col justify-center"
             key={index}
-            onClick={() => goToPlaceDetails(place.id)}
           >
-            <div className="flex justify-center">
+            <div className="flex justify-center"
+            onClick={() => goToPlaceDetails(place.id)}>
               <div
                 className="w-full sm:max-w-[17vw] max-w-[39vw] bg-cover bg-center aspect-square rounded-full hover:saturate-0 hover:opacity-40 transition-opacity ease-linear duration-[50ms]"
                 style={{ backgroundImage: `url(${place.image_url})` }}
@@ -88,6 +88,7 @@ const Slideshowid = () => {
                 <p className="text-sm break-words mx-2 text-stone-400">{place.description}</p>
               </div>
             </div>
+            <button onClick={() => handleDelete(userId, place.id)}>Delete</button>
           </div>
         ))}
       </Slider>
