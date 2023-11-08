@@ -37,8 +37,6 @@ const Slideshowid = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: false,
         },
       },
       {
@@ -46,7 +44,6 @@ const Slideshowid = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
         },
       },
       {
