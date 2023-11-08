@@ -27,7 +27,7 @@ const Login = () => {
         <PasswordInput register={register} errors={errors} />
         <input type="submit" className='forms-submit' value="Sign in" />
       </form>
-      <p className="text-center text-white primary-font mt-auto mb-4">Don&apos;t have an account? <a className="underline text-white cursor-pointer text-yellow-300" onClick={handleClick}>Sign up</a></p>
+      <p className="text-center text-white primary-font mt-auto mb-4">Don&apos;t have an account? <a className="underline cursor-pointer text-yellow-300" onClick={handleClick}>Sign up</a></p>
     </div>
   );
 };

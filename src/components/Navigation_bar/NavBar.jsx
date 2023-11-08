@@ -81,7 +81,7 @@ const NavBar = () => {
             className="ml-[15px] mt-[15px] text-[1.5rem] lg:hidden"
             onClick={showHideNav}
           />
-          <img src={lb} className="w-[65%] mt-12 mx-auto" />
+          <img src={lb} className="w-[65%] lg:mt-12 mx-auto" />
           <nav className="m-auto ml-[15px] mr-0">
             <ul className="flex flex-col content-center min-h-[70vh] justify-evenly">
               {elements.map((element, index) => (
