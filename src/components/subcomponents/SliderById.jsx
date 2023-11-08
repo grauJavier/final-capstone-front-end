@@ -59,6 +59,14 @@ const Slideshowid = () => {
     ],
   };
 
+  if (placesById.length < settings.responsive[0].settings.slidesToShow) {
+    settings.responsive[0].settings.slidesToShow = placesById.length;
+  } 
+  
+  if (placesById.length < settings.responsive[1].settings.slidesToShow) {
+    settings.responsive[1].settings.slidesToShow = placesById.length;
+  }
+
   const backgroundColors = ['golden-yellow', 'lime-green', 'turquoise-blue'];
 
   return (
