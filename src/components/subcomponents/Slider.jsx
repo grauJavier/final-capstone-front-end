@@ -49,11 +49,11 @@ const Slideshow = () => {
     ],
   };
 
-  if (places.length < settings.responsive[0].settings.slidesToShow) {
+  if (places.length !== 0 && places.length < settings.responsive[0].settings.slidesToShow) {
     settings.responsive[0].settings.slidesToShow = places.length;
   } 
   
-  if (places.length < settings.responsive[1].settings.slidesToShow) {
+  if (places.length !== 0 && places.length < settings.responsive[1].settings.slidesToShow) {
     settings.responsive[1].settings.slidesToShow = places.length;
   }
 
