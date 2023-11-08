@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getDetails } from '../../redux/places/placesSlice';
 import { useParams, useNavigate } from 'react-router-dom';
 import { selectUserId } from '../../redux/user/userSlice.js';
+import { deletePlace } from '../../redux/places/placesSlice';
 
 const PlaceDetails = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,11 @@ const PlaceDetails = () => {
   useEffect(() => {
     dispatch(getDetails(id));
   }, [dispatch, id]);
+
+  const handleDelete = (userId, placeId) => {
+    dispatch(deletePlace({ user_id: userId, place_id: placeId }));
+    navigate(-1);
+  };
 
   if (!placeDetails) {
     return <div className="flex flex-col items-center justify-center text-center">Loading...</div>;
@@ -73,7 +79,7 @@ const PlaceDetails = () => {
           </table>
           {currentUser === placeDetails.place.user_id ? (
             <a
-              href={`/reservation?city_id=${placeDetails.place.city.id}&place_id=${placeDetails.place_id}`}
+              onClick={() => handleDelete(placeDetails.place.user_id, placeDetails.place_id)}
               className="min-w-fit float-right !max-w-full w-full flex mt-8 p-3 font-semibold rounded-full bg-red-500 text-white hover:bg-white hover:text-red-500 hover:border-red-500 border-2 border-red-500 transition ease-linear duration-200"
             >
               <svg
