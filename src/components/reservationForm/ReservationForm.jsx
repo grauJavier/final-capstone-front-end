@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import fetchCities from '../../redux/reservationForm/actions/fetchCities';
 import fetchPlaces from '../../redux/reservationForm/actions/fetchPlacesByCityId.js';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import axios from 'axios';
 import { selectUserId } from '../../redux/user/userSlice.js';
+import createReservation from '../../redux/myReservations/actions/createReservation.js';
 
-function ReservationForm() {
+const ReservationForm = () => {
+  const {
+    handleSubmit
+  } = useForm();
+
   const cities = useSelector((state) => state.reservation.cities);
   const places = useSelector((state) => state.reservation.places);
   const status = useSelector((state) => state.reservation.status);
@@ -34,7 +39,7 @@ function ReservationForm() {
     }
   }, [selectedCity, dispatch, cities]);
 
-  const handleSubmit = () => {
+  const onSubmit = () => {
     // Send the data to the server
     const data = {
       user_id: userId,
@@ -42,14 +47,7 @@ function ReservationForm() {
       schedule_date: selectedDate.toISOString().split('T')[0],
     };
 
-    axios
-      .post(`http://127.0.0.1:3000/users/${userId}/reservations`, data)
-      .then((response) => {
-        console.log('Reservation submitted successfully', response);
-      })
-      .catch((error) => {
-        console.error('Error submitting reservation', error);
-      });
+    dispatch(createReservation(data));
   };
 
   const today = new Date();
@@ -61,7 +59,7 @@ function ReservationForm() {
         <h2 className="secondary-font text-4xl text-zinc-50 mb-12 text-center">
           Add a new reservation
         </h2>
-        <form className="flex flex-col gap-5 m-3 mt-0 forms-layout">
+        <form className="flex flex-col gap-5 m-3 mt-0 forms-layout" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <select
               id="citySelect"
@@ -108,7 +106,7 @@ function ReservationForm() {
               required
             />
           </div>
-          <button className="forms-submit min-w-fit" onClick={handleSubmit}>
+          <button type="submit" className="forms-submit min-w-fit">
             Submit
           </button>
         </form>
