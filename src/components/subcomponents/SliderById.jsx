@@ -88,7 +88,9 @@ const Slideshowid = () => {
                 <p className="text-sm break-words mx-2 text-stone-400">{place.description}</p>
               </div>
             </div>
-            <button onClick={() => handleDelete(userId, place.id)}>Delete</button>
+            <div>
+              <button className='bg-golden-yellow w-20 rounded-xl mt-2' onClick={() => handleDelete(userId, place.id)}>Delete</button>
+            </div>
           </div>
         ))}
       </Slider>
