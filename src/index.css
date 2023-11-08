@@ -131,7 +131,8 @@
 .react-datepicker__header {
   border-top-right-radius: 24px !important;
   border-top-left-radius: 24px;
-  background-color: var(--lime-green);
+  border-color: var(--golden-yellow);
+  background-color: var(--golden-yellow);
 }
 
 .react-datepicker__current-month,
