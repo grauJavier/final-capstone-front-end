@@ -37,8 +37,6 @@ const Slideshowid = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: false,
         },
       },
       {
@@ -46,7 +44,6 @@ const Slideshowid = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
         },
       },
       {
@@ -59,11 +56,11 @@ const Slideshowid = () => {
     ],
   };
 
-  if (placesById.length < settings.responsive[0].settings.slidesToShow) {
+  if (placesById.length > 0 && placesById.length < settings.responsive[0].settings.slidesToShow) {
     settings.responsive[0].settings.slidesToShow = placesById.length;
   } 
   
-  if (placesById.length < settings.responsive[1].settings.slidesToShow) {
+  if (placesById.length > 0 && placesById.length < settings.responsive[1].settings.slidesToShow) {
     settings.responsive[1].settings.slidesToShow = placesById.length;
   }
 

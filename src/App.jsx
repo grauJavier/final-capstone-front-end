@@ -1,19 +1,19 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Places from './components/places/Places'
-import NotFound from './components/NotFound'
-import Register from './components/Register_Login_forms/Register'
-import Login from './components/Register_Login_forms/Login'
-import NoticeAlert from './components/NoticeAlert'
+import NotFound from './components/utils/NotFound'
+import Register from './components/register_login_forms/Register'
+import Login from './components/register_login_forms/Login'
+import NoticeAlert from './components/utils/NoticeAlert'
 import ProtectedRoute from './components/utils/ProtectedRoute'
 import PublicRoute from './components/utils/PublicRoutes'
-import PlacesForm from './components/PlacesForm'
-import NavBar from './components/Navigation_bar/NavBar'
+import PlaceForm from './components/place_form/PlaceForm.jsx'
+import NavBar from './components/navigation_bar/NavBar'
 import './App.css'
-import ReservationForm from './components/reservationForm/ReservationForm'
-import MyReservations from './components/myReservations/MyReservations.jsx'
+import ReservationForm from './components/reservation_form/ReservationForm'
+import MyReservations from './components/my_reservations/MyReservations.jsx'
 import PlacesDetails from './components/place_details/PlaceDetails.jsx'
-import MyPlaces from './components/myPlaces/MyPlaces.jsx'
+import MyPlaces from './components/my_places/MyPlaces.jsx'
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
           <Route index path="/" element={<Navigate to="/places" />} />
           <Route path="/places" element={<Places />} />
           <Route path="/places/:id/details" element={<PlacesDetails />} />
-          <Route path="/new-place" element={<PlacesForm />} />
+          <Route path="/new-place" element={<PlaceForm />} />
           <Route path="/reservation" element={<ReservationForm />} />
           <Route path="/my-reservations" element={<MyReservations />} />
           <Route path="/my-places" element={<MyPlaces />} />

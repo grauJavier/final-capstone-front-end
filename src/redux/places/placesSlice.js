@@ -1,7 +1,7 @@
 import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import { placesURL } from "../../utils/constant";
 import axios from "axios";
-import { setNotice, setError, clearNoticeAndError } from "../NoticeAlert/NoticeAlertSlice";
+import { setNotice, setError, clearNoticeAndError } from "../notice_alert/noticeAlertSlice";
 
 const GET_PLACES = "placesStore/places/GET_PLACES";
 const GET_DETAILS = "placesStore/places/GET_DETAILS";

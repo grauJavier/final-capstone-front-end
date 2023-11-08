@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
-import fetchCities from '../../redux/reservationForm/actions/fetchCities';
-import fetchPlaces from '../../redux/reservationForm/actions/fetchPlacesByCityId.js';
+import fetchCities from '../../redux/reservation_form/actions/fetchCities';
+import fetchPlaces from '../../redux/reservation_form/actions/fetchPlacesByCityId.js';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { selectUserId } from '../../redux/user/userSlice.js';
-import createReservation from '../../redux/myReservations/actions/createReservation.js';
+import createReservation from '../../redux/my_reservations/actions/createReservation.js';
 
 const ReservationForm = () => {
   const {

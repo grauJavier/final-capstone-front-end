@@ -4,9 +4,9 @@ import { persistStore, persistReducer } from 'redux-persist';
 import sessionStorage from 'redux-persist/lib/storage/session'; // defaults to localStorage for web
 import { createTransform } from 'redux-persist';
 import placesSlice from "./places/placesSlice";
-import reservationReducer from './reservationForm/reservationSlice.js';
-import myReservationsReducer from './myReservations/myReservationsSlice.js';
-import noticeAlertReducer from './NoticeAlert/NoticeAlertSlice.js';
+import reservationReducer from './reservation_form/reservationSlice.js';
+import myReservationsReducer from './my_reservations/myReservationsSlice.js';
+import noticeAlertReducer from './notice_alert/noticeAlertSlice.js';
 
 // Create a personalized transform.
 const userTransform = createTransform(

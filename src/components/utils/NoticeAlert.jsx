@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setNotice, setError } from "../redux/NoticeAlert/NoticeAlertSlice"; 
+import { setNotice, setError } from "../../redux/notice_alert/noticeAlertSlice"; 
 
 const NoticeAlert = () => {
   const notice = useSelector((state) => state.noticeAlert.notice);

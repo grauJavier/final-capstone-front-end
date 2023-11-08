@@ -30,8 +30,6 @@ const Slideshow = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: false,
         },
       },
       {
@@ -39,7 +37,6 @@ const Slideshow = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
         },
       },
       {
@@ -51,6 +48,14 @@ const Slideshow = () => {
       },
     ],
   };
+
+  if (places.length > 0 && places.length < settings.responsive[0].settings.slidesToShow) {
+    settings.responsive[0].settings.slidesToShow = places.length;
+  } 
+  
+  if (places.length > 0 && places.length < settings.responsive[1].settings.slidesToShow) {
+    settings.responsive[1].settings.slidesToShow = places.length;
+  }
 
   const backgroundColors = ['golden-yellow', 'lime-green', 'turquoise-blue'];
 
