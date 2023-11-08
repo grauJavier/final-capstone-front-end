@@ -78,6 +78,9 @@ const placesSlice = createReducer(initialState, builder => {
     })
     .addCase(deletePlace.fulfilled, (state, { payload }) => {
       const placeId = payload;
+      state.placesById = state.placesById.filter(
+        (place) => place.id !== placeId
+      );
       state.places = state.places.filter(
         (place) => place.id !== placeId
       );
