@@ -88,7 +88,7 @@ const NavBar = () => {
                 <li
                   key={index}
                   className={`py-[10px] pl-[10px] font-bold cursor-pointer ${
-                    path.pathname === element[1] ? 'bg-login-green text-white' : ''
+                    path.pathname.startsWith(element[1]) ? 'bg-login-green text-white' : ''
                   }`}
                   onClick={() => navigate(`${element[1]}`)}
                 >
