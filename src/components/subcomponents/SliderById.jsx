@@ -56,11 +56,11 @@ const Slideshowid = () => {
     ],
   };
 
-  if (placesById.length !== 0 && placesById.length < settings.responsive[0].settings.slidesToShow) {
+  if (placesById.length > 0 && placesById.length < settings.responsive[0].settings.slidesToShow) {
     settings.responsive[0].settings.slidesToShow = placesById.length;
   } 
   
-  if (placesById.length !== 0 && placesById.length < settings.responsive[1].settings.slidesToShow) {
+  if (placesById.length > 0 && placesById.length < settings.responsive[1].settings.slidesToShow) {
     settings.responsive[1].settings.slidesToShow = placesById.length;
   }
 
