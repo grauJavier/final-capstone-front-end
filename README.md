@@ -1,6 +1,6 @@
 <div align="center">
 
-![MOCKUP](./src/assets/images/app-mockup.png)
+![MOCKUP](./src/assets/app-mockup.png)
 
 <a name="readme-top"></a>
 
