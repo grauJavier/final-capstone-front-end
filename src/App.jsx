@@ -12,7 +12,7 @@ import NavBar from './components/navigation_bar/NavBar'
 import './App.css'
 import ReservationForm from './components/reservation_form/ReservationForm'
 import MyReservations from './components/my_reservations/MyReservations.jsx'
-import PlacesDetails from './components/place_details/PlaceDetails.jsx'
+import PlaceDetails from './components/place_details/PlaceDetails.jsx'
 import MyPlaces from './components/my_places/MyPlaces.jsx'
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         <Route element={<ProtectedRoute user={user} />}>
           <Route index path="/" element={<Navigate to="/places" />} />
           <Route path="/places" element={<Places />} />
-          <Route path="/places/:id/details" element={<PlacesDetails />} />
+          <Route path="/places/:id/details" element={<PlaceDetails />} />
           <Route path="/new-place" element={<PlaceForm />} />
           <Route path="/reservation" element={<ReservationForm />} />
           <Route path="/my-reservations" element={<MyReservations />} />
