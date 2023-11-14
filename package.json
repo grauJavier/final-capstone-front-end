@@ -28,7 +28,8 @@
     "react-slick": "^0.29.0",
     "react-slideshow-image": "^4.3.0",
     "redux-persist": "^6.0.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "vite-plugin-ssr": "^0.4.142"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
