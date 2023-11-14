@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { setNotice, setError, clearNoticeAndError } from '../../notice_alert/noticeAlertSlice';
 
-const API = 'http://127.0.0.1:3000/login';
+const API = 'https://renteaze-d1cc8b293660.herokuapp.com/login';
 
 const sendLogin = createAsyncThunk('user/sendLogin', async (data, { dispatch }) => {  
     return await axios.post(API, data)
