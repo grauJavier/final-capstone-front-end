@@ -68,7 +68,7 @@ function MyReservations() {
                   </h3>
 
                   <div
-                    className="aspect-square p-2 border-white border-2 rounded-full"
+                    className="cursor-pointer aspect-square p-2 border-white border-2 rounded-full"
                     onClick={() => handleDelete(userId, reservation.id)}
                   >
                     <svg

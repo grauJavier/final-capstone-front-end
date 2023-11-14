@@ -80,7 +80,7 @@ const PlaceDetails = () => {
           {currentUser === placeDetails.place.user_id ? (
             <a
               onClick={() => handleDelete(placeDetails.place.user_id, placeDetails.place_id)}
-              className="min-w-fit float-right !max-w-full w-full flex mt-8 p-3 font-semibold rounded-full bg-red-500 text-white hover:bg-white hover:text-red-500 hover:border-red-500 border-2 border-red-500 transition ease-linear duration-200"
+              className="cursor-pointer min-w-fit float-right !max-w-full w-full flex mt-8 p-3 font-semibold rounded-full bg-red-500 text-white hover:bg-white hover:text-red-500 hover:border-red-500 border-2 border-red-500 transition ease-linear duration-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ const PlaceDetails = () => {
           ) : (
             <a
               href={`/reservation?city_id=${placeDetails.place.city.id}&place_id=${placeDetails.place_id}`}
-              className="min-w-fit float-right !max-w-full w-full flex mt-8 p-3 bg-golden-yellow text-white font-semibold rounded-full active:bg-white active:text-golden-yellow active:border-golden-yellow border-2 border-golden-yellow hover:bg-white hover:text-golden-yellow hover:border-golden-yellow"
+              className="cursor-pointer min-w-fit float-right !max-w-full w-full flex mt-8 p-3 bg-golden-yellow text-white font-semibold rounded-full active:bg-white active:text-golden-yellow active:border-golden-yellow border-2 border-golden-yellow hover:bg-white hover:text-golden-yellow hover:border-golden-yellow"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@ const PlaceDetails = () => {
           )}
           <a
             onClick={() => navigate(-1)}
-            className="min-w-fit float-right !max-w-full w-full flex mt-8 p-3 bg-lime-green text-white font-semibold rounded-full active:bg-white active:text-lime-green active:border-lime-green border-2 border-lime-green hover:bg-white hover:text-lime-green hover:border-lime-green"
+            className="cursor-pointer min-w-fit float-right !max-w-full w-full flex mt-8 p-3 bg-lime-green text-white font-semibold rounded-full active:bg-white active:text-lime-green active:border-lime-green border-2 border-lime-green hover:bg-white hover:text-lime-green hover:border-lime-green"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
