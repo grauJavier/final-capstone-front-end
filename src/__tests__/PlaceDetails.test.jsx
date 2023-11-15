@@ -90,22 +90,6 @@ describe('PlaceDetails Component', () => {
     expect(reservationLink.getAttribute('href')).toBe(expectedHref);
   });
 
-  it('"Make a visit reservation" has build the right href', () => {
-    render(
-      <Provider store={store}>
-        <MemoryRouter>
-          <PlaceDetails />
-        </MemoryRouter>
-      </Provider>
-    );
-
-    const reservationLink = screen.getByText(/Make a visit reservation here!/);
-    expect(reservationLink).toBeTruthy();
-
-    const expectedHref = '/reservation?city_id=1&place_id=1';
-    expect(reservationLink.getAttribute('href')).toBe(expectedHref);
-  });
-
   const modifiedStore = mockStore({
     ...store.getState(),
     placesSlice: {
