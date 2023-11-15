@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
+    "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.0",
     "axios": "^1.6.0",
     "date-fns": "^2.30.0",
