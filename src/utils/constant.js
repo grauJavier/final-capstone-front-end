@@ -1,1 +1,1 @@
-export const placesURL = "http://127.0.0.1:3000/places";
+export const placesURL = "https://renteaze-d1cc8b293660.herokuapp.com/places";

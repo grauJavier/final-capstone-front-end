@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import sendLogin from '../../redux/user/actions/sendLogin';
 import EmailInput from './inputs/EmailInput';
 import PasswordInput from './inputs/PasswordInput';
+import logoFull from '../../assets/logo-full.png';
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -20,7 +21,7 @@ const Login = () => {
 
   return (
     <div className='bg-lime-img bg-cover bg-center min-h-screen flex flex-col items-center'>
-      <img src="src/assets/logo-full.png" className="logo-image" />
+      <img src={logoFull} className="logo-image" />
       <h2 className="secondary-font text-3xl font-bold text-zinc-50">LOGIN</h2>
       <form className="forms-layout mt-12" onSubmit={handleSubmit(onSubmit)}>
         <EmailInput register={register} errors={errors} />

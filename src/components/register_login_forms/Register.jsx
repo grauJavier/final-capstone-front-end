@@ -6,6 +6,7 @@ import sendRegistration from '../../redux/user/actions/sendRegistration';
 import UsernameInput from './inputs/UsernameInput';
 import EmailInput from './inputs/EmailInput';
 import PasswordInput from './inputs/PasswordInput';
+import logoFull from '../../assets/logo-full.png';
 
 const Register = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -29,15 +30,15 @@ const Register = () => {
 
   return (
     <div className='bg-lime-img bg-cover min-h-screen flex flex-col items-center'>
-      <img src="src/assets/logo-full.png" className="logo-image" />
-      <h2 className="secondary-font text-2xl text-zinc-50">REGISTER</h2>
+      <img src={logoFull} className="logo-image" />
+      <h2 className="secondary-font text-3xl font-bold text-zinc-50">REGISTER</h2>
       <form className="forms-layout" onSubmit={handleSubmit(onSubmit)}>
         <UsernameInput register={register} errors={errors} />
         <EmailInput register={register} errors={errors} />
         <PasswordInput register={register} errors={errors} />
         <input type="submit" className='forms-submit' value="Sign up" />
       </form>
-      <p className="text-center primary-font mt-auto">Already have an account? <a className="underline text-white cursor-pointer" onClick={handleClick}>Sign in</a></p>
+      <p className="text-center text-white primary-font mt-auto mb-4">Already have an account? <a className="underline cursor-pointer text-yellow-300" onClick={handleClick}>Sign in</a></p>
     </div>
   );
 };
