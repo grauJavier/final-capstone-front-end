@@ -140,6 +140,7 @@ This command will run the test suites and provide you with the test results and 
 👤 **Javier Grau**
 
 - GitHub: [@grauJavier](https://github.com/grauJavier)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/javiergrau)
 
 👤 **Manuel Sanchez**
 
