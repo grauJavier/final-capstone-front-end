@@ -19,14 +19,6 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         titillium: ['Titillium Web', 'sans-serif'],
       },
-      backgroundImage: {
-        'lime-img':
-          "linear-gradient(to top, rgba(150, 190, 0, 0.8), rgba(150, 190, 0, 0.8)), url('./src/assets/login-img.jpg')",
-        'golden-img':
-          "linear-gradient(to top, rgba(60, 46, 0, 0.8), rgba(255, 198, 0, 0.8)), url('./src/assets/login-img.jpg')",
-        'turquoise-img':
-          "linear-gradient(to top, rgb(0, 50, 50, 0.8), rgba(16, 187, 181, 0.8)), url('./src/assets/login-img.jpg')",
-      },
       keyframes: {
         'show-message': {
           '0%': { transform: 'translatey(-100%)' },

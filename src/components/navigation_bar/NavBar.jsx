@@ -3,7 +3,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Logout from '../register_login_forms/Logout';
-import lb from '../../assets/logo-black.png';
+import logoBlack from '../../assets/logo-black.png';
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
@@ -81,7 +81,7 @@ const NavBar = () => {
             className="ml-[15px] mt-[15px] text-[1.5rem] lg:hidden"
             onClick={showHideNav}
           />
-          <img src={lb} className="w-[65%] lg:mt-12 mx-auto" />
+          <img src={logoBlack} className="w-[65%] lg:mt-12 mx-auto" />
           <nav className="m-auto ml-[15px] mr-0">
             <ul className="flex flex-col content-center min-h-[70vh] justify-evenly">
               {elements.map((element, index) => (

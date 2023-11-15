@@ -19,13 +19,13 @@ export const getPlacesById = createAsyncThunk(GET_PLACES_BY_ID, id => {
 });
 
 export const getDetails = createAsyncThunk(GET_DETAILS, id => {
-  const detailsURL = `http://127.0.0.1:3000/places/${id}/details`;
+  const detailsURL = `https://renteaze-d1cc8b293660.herokuapp.com/places/${id}/details`;
   return axios.get(detailsURL)
     .then((response) => response.data);
 });
 
 export const sendPlaces = createAsyncThunk('placesStore/places/sendPlaces', async (data, { dispatch }) => {
-    return await axios.post(`http://127.0.0.1:3000/users/${data.user_id}/places`, data.body)
+    return await axios.post(`https://renteaze-d1cc8b293660.herokuapp.com/users/${data.user_id}/places`, data.body)
       .then(response => {
         dispatch(clearNoticeAndError());
         dispatch(setNotice('Place created successfully!'));
@@ -39,7 +39,7 @@ export const sendPlaces = createAsyncThunk('placesStore/places/sendPlaces', asyn
 })
 
 export const deletePlace = createAsyncThunk(DELETE_PLACE, data => {
-  const deleteURL = `http://127.0.0.1:3000/users/${data.user_id}/places/${data.place_id}`;
+  const deleteURL = `https://renteaze-d1cc8b293660.herokuapp.com/users/${data.user_id}/places/${data.place_id}`;
   return axios.delete(deleteURL)
   .then(() => data.place_id)
   .catch(error => {

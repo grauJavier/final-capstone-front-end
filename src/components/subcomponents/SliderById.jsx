@@ -70,10 +70,10 @@ const Slideshowid = () => {
     <div>
       <Slider className="md:mx-24 mx-16 h-full" {...settings}>
         {placesById.map((place, index) => (
-          <div className="cursor-pointer flex flex-col justify-center" key={index}>
+          <div className="flex flex-col justify-center" key={index}>
             <div className="flex justify-center" onClick={() => goToPlaceDetails(place.id)}>
               <div
-                className="w-full sm:max-w-[17vw] max-w-[39vw] bg-cover bg-center aspect-square rounded-full hover:saturate-0 hover:opacity-40 transition-opacity ease-linear duration-[50ms]"
+                className="cursor-pointer w-full sm:max-w-[17vw] max-w-[39vw] bg-cover bg-center aspect-square rounded-full hover:saturate-0 hover:opacity-40 transition-opacity ease-linear duration-[50ms]"
                 style={{ backgroundImage: `url(${place.image_url})` }}
               />
               <div
