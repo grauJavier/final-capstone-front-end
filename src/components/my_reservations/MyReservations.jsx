@@ -5,7 +5,7 @@ import fetchMyReservations from '../../redux/my_reservations/actions/fetchMyRese
 import { selectUserId } from '../../redux/user/userSlice.js';
 import { formatDistanceToNow } from 'date-fns';
 
-function MyReservations() {
+const MyReservations = () => {
   const dispatch = useDispatch();
   const reservations = useSelector((state) => state.myReservations.reservations);
   const userId = useSelector(selectUserId);

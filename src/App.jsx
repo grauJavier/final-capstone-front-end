@@ -15,7 +15,7 @@ import MyReservations from './components/my_reservations/MyReservations.jsx'
 import PlaceDetails from './components/place_details/PlaceDetails.jsx'
 import MyPlaces from './components/my_places/MyPlaces.jsx'
 
-function App() {
+const App = () => {
 
   const user = useSelector((state) => state.user.currentUser);
 

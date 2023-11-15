@@ -106,13 +106,17 @@ git clone git@github.com:grauJavier/final-capstone-front-end.git
 
 Install this project with:
 
-- npm install
+```bash
+npm install
+```
 
 ### Usage
 
 To run the project, execute the following command:
 
-npm start
+```bash
+npm run dev
+```
 
 ### Run tests <a name="tests"></a>
 To run the frontend tests, follow these steps:
