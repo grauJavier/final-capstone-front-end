@@ -3,7 +3,7 @@ import { beforeEach, expect, describe, test } from 'vitest';
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from '../components/Register_Login_forms/Login';
+import Login from '../components/register_login_forms/Login';
 import Register from '../components/register_login_forms/Register';
 import { store } from '../redux/store';
 
