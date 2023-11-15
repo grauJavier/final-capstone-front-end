@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { BiLogOut } from "react-icons/bi";
 import sendLogout from "../../redux/user/actions/sendLogout";
 
 const Logout = () => {
@@ -16,7 +17,8 @@ const Logout = () => {
   };
 
   return (
-    <button className="bg-[#feb500] text-white m-auto rounded-full py-[0.7rem] px-[2rem]" onClick={handleSubmit}>
+    <button className="bg-[#feb500] text-white m-auto rounded-full py-[0.7rem] px-[2rem] flex items-center gap-[5px]" onClick={handleSubmit}>
+      <BiLogOut className="text-white text-[1.3rem]" />
       Log out
     </button>
   );
