@@ -14,7 +14,7 @@
 - [📖 Final Capstone Front End ](#-final-capstone-front-end-)
   - [🛠 ER Diagram ](#-er-diagram-)
   - [💻 Link to Back End ](#-link-to-back-end-)
-  - [💻 link to Kanban board information ](#-link-to-kanban-board-information-)
+  - [💻 Link to Kanban board information ](#-link-to-kanban-board-information-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -42,7 +42,7 @@
 
 <p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
-## 💻 link to Kanban board information <a name="built-with"></a>
+## 💻 Link to Kanban board information <a name="built-with"></a>
 
 [Link to Kanban Board](https://github.com/grauJavier/final-capstone-back-end/projects/1)
 
@@ -93,6 +93,51 @@ Before you begin, make sure you have the following prerequisites installed on yo
 
 - Node.js: You need Node.js to run the React.js application.
 - npm: npm is used to manage packages in your React project.
+
+### ⚠️*IMPORTANT*
+To upload and view images locally from your localhost, you must first set up a Firebase project. You'll need to create a [Firebase](https://firebase.google.com/) account, then configure a new project with Storage enabled. Within the project, you can generate a credential key which is necessary to authenticate Storage uploads from your local environment. ***For security, it is critical not to share this private key with others.*** We recommend reviewing Firebase's documentation to complete these setup steps. If going through the full configuration process seems daunting, you're welcome to test our [Online Demo](https://rent-eaze.onrender.com/) instead. However, if you still prefer to run it locally, we can provide a video tutorial and brief summary of the key implementation steps to integrate Storage.
+
+[![Video](https://img.youtube.com/vi/-IFRVMEhZDc/maxresdefault.jpg)](https://www.youtube.com/watch?v=-IFRVMEhZDc)
+
+#### Video resume
+Here are the key steps required to use Firebase Storage on the web based on the video:
+
+1. Create a Firebase project at console.firebase.google.com and select "Add Firebase to your web app". 
+
+2. Register the app by adding a configuration to your HTML file. This gives access to the Firebase SDK.
+
+3. Use the Firebase SDK to initialize a storage reference:
+
+  ```js
+  // Get a reference to the storage service, which is used to create references in your storage bucket
+  const storage = firebase.storage();
+  ```
+
+4. Create a reference to an image file location and upload using put():
+
+  ```js
+  // Create a storage reference from our storage service
+  const storageRef = storage.ref();
+
+  // Upload the file
+  const uploadTask = storageRef.child('images/stars.jpg').put(file);
+  ```
+
+5. Monitor upload progress and get the download URL when complete:
+
+  ```js
+  uploadTask.on('state_changed', ..., 
+  uploadTask.then(snapshot => {...})
+  ```
+
+6. Display the image by binding the download URL:
+
+  ```html
+  <img src="{{downloadURL}}">
+  ```
+
+The video demonstrates integrating Firebase Storage with a simple image uploading web app. Following these steps provides a way to store and access files from Firebase Storage in a web application.
+
 
 ### Setup
 
