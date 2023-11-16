@@ -1,0 +1,1 @@
+export const placesURL = "https://renteaze-d1cc8b293660.herokuapp.com/places";
